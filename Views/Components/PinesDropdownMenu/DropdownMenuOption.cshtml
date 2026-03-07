@@ -1,0 +1,6 @@
+@using PinesUI.StaticComponents.Views.Components.PinesDropdownMenu;
+@model DropdownMenuOption
+
+<a href="@Model.Link" class="relative flex cursor-default select-none hover:bg-neutral-100 items-center rounded px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
+    @Model.ChildContent
+</a>

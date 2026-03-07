@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="TechGems.StaticComponents" Version="1.1.0-alpha" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="wwwroot\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Remove="wwwroot\css\input.css" />
+	  <Content Remove="wwwroot\tailwind.config.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Views\Test\" />
+		<Folder Include="wwwroot\js\" />
+	</ItemGroup>
+
+	<Target Name="TailwindBuild" AfterTargets="AfterBuild">
+		<Exec Command="tailwindcss -i ./input.css -o ./css/lib.css" WorkingDirectory="wwwroot" />
+	</Target>
+
+
+
+</Project>

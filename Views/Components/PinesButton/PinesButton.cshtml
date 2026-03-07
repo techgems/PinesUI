@@ -1,0 +1,104 @@
+@using PinesUI.StaticComponents.Views.Components.PinesButton
+@model PinesButton;
+@{
+    var sharedClass = "inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide transition-colors rounded-md";
+}
+
+@if(Model.ButtonType == PinesButtonTypeEnum.Primary)
+{
+    var primaryStyles = "border focus:ring-2 focus:ring-offset-2 focus:shadow-outline focus:outline-none";
+    var colorStyles = "";
+
+    switch (Model.Color)
+    {
+        case PinesButtonColorEnum.Black:
+            colorStyles = "bg-neutral-950 hover:bg-neutral-900 focus:ring-neutral-900";
+            break;
+        case PinesButtonColorEnum.Blue:
+            colorStyles = "bg-blue-600 rounded-md hover:bg-blue-700 focus:ring-blue-700";
+            break;
+        case PinesButtonColorEnum.Red:
+            colorStyles = "bg-red-600 rounded-md hover:bg-red-700 focus:ring-red-700";
+            break;
+        case PinesButtonColorEnum.Green:
+            colorStyles = "bg-green-600 rounded-md hover:bg-green-700 focus:ring-green-700";
+            break;
+        case PinesButtonColorEnum.Yellow:
+            colorStyles = "bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-600";
+            break;
+        case PinesButtonColorEnum.Neutral:
+        default:
+            colorStyles = "bg-white text-neutral-500 hover:text-neutral-700 border-neutral-200/70 hover:bg-neutral-100 active:bg-white focus:bg-white focus:ring-neutral-200/60";
+            break;
+
+    }
+
+    <!--Primary-->
+    <button type="button" class="@sharedClass @primaryStyles @colorStyles duration-200">
+        @Model.ChildContent
+    </button>
+}
+
+@if(Model.ButtonType == PinesButtonTypeEnum.Secondary)
+{
+    var secondaryStyles = "focus:ring-2 focus:ring-offset-2";
+    var colorStyles = "";
+
+    switch(Model.Color)
+    {
+        case PinesButtonColorEnum.Blue:
+            colorStyles = "text-blue-500 bg-blue-50 focus:ring-blue-100 hover:text-blue-600 hover:bg-blue-100";
+            break;
+        case PinesButtonColorEnum.Red:
+            colorStyles = "text-red-500 focus:ring-red-100 bg-red-50 hover:text-red-600 hover:bg-red-100";
+            break;
+        case PinesButtonColorEnum.Yellow:
+            colorStyles = "text-yellow-600 focus:ring-yellow-100 bg-yellow-50 hover:text-yellow-700 hover:bg-yellow-100";
+            break;
+        case PinesButtonColorEnum.Green:
+            colorStyles = "text-green-500 focus:ring-green-100 bg-green-50 hover:text-green-600 hover:bg-green-100";
+            break;
+        case PinesButtonColorEnum.Black:
+        case PinesButtonColorEnum.Neutral:
+        default:
+            colorStyles = "text-neutral-500 bg-neutral-50 focus:ring-neutral-100 hover:text-neutral-600 hover:bg-neutral-100";
+            break;
+    }
+
+    <!--Secondary-->
+    <button type="button" class="@sharedClass @secondaryStyles @colorStyles duration-100">
+        @Model.ChildContent
+    </button>
+}
+
+@if(Model.ButtonType == PinesButtonTypeEnum.Outlined)
+{
+    var outlinedStyles = "bg-white border-2 text-neutral-900 hover:text-white border-neutral-900 hover:bg-neutral-900";
+    var colorStyles = "";
+
+    switch (Model.Color)
+    {
+        case PinesButtonColorEnum.Blue:
+            colorStyles = "text-blue-600 border-blue-600 rounded-md hover:text-white hover:bg-blue-600";
+            break;
+        case PinesButtonColorEnum.Red:
+            colorStyles = "text-red-600 border-red-600 rounded-md hover:text-white hover:bg-red-600";
+            break;
+        case PinesButtonColorEnum.Yellow:
+            colorStyles = "text-yellow-600 border-yellow-500 rounded-md hover:text-white hover:bg-yellow-500";
+            break;
+        case PinesButtonColorEnum.Green:
+            colorStyles = "text-green-600 border-green-600 rounded-md hover:text-white hover:bg-green-600";
+            break;
+        case PinesButtonColorEnum.Black:
+        case PinesButtonColorEnum.Neutral:
+        default:
+            colorStyles = "text-neutral-900 hover:text-white border-neutral-900 hover:bg-neutral-900";
+            break;
+    }
+
+    <!--Outlined-->
+    <button type="button" class="@sharedClass @outlinedStyles @colorStyles duration-100">
+        @Model.ChildContent
+    </button>
+}

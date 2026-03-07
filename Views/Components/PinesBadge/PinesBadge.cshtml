@@ -1,0 +1,33 @@
+@using PinesUI.StaticComponents.Views.Components.PinesBadge;
+@model PinesBadge;
+
+@{
+    var sharedClass = "rounded-full px-2.5 py-0.5 text-xs font-semibold";
+                      
+    var colorClass = Model switch
+    {
+        { Type: BadgeType.Primary, Color: BadgeColor.Neutral } => "bg-black text-white",
+        { Type: BadgeType.Primary, Color: BadgeColor.Blue } => "bg-blue-600 text-white",
+        { Type: BadgeType.Primary, Color: BadgeColor.Green } => "bg-green-600 text-white",
+        { Type: BadgeType.Primary, Color: BadgeColor.Purple } => "bg-purple-600 text-white",
+        { Type: BadgeType.Primary, Color: BadgeColor.Red } => "bg-red-600 text-white",
+        { Type: BadgeType.Primary, Color: BadgeColor.Yellow } => "bg-yellow-600 text-white",
+        { Type: BadgeType.Secondary, Color: BadgeColor.Neutral } => "bg-gray-100 text-gray-800",
+        { Type: BadgeType.Secondary, Color: BadgeColor.Blue } => "bg-blue-100 text-blue-800",
+        { Type: BadgeType.Secondary, Color: BadgeColor.Green } => "bg-green-100 text-green-800",
+        { Type: BadgeType.Secondary, Color: BadgeColor.Purple } => "bg-purple-100 text-purple-800",
+        { Type: BadgeType.Secondary, Color: BadgeColor.Red } => "bg-red-100 text-red-800",
+        { Type: BadgeType.Secondary, Color: BadgeColor.Yellow } => "bg-yellow-100 text-yellow-800",
+        { Type: BadgeType.Outlined, Color: BadgeColor.Neutral } => "bg-transparent text-gray-500 border border-gray-500",
+        { Type: BadgeType.Outlined, Color: BadgeColor.Blue } => "bg-transparent text-blue-500 border border-blue-500",
+        { Type: BadgeType.Outlined, Color: BadgeColor.Green } => "bg-transparent text-green-500 border border-green-500",
+        { Type: BadgeType.Outlined, Color: BadgeColor.Purple } => "bg-transparent text-purple-500 border border-purple-500",
+        { Type: BadgeType.Outlined, Color: BadgeColor.Red } => "bg-transparent text-red-500 border border-red-500",
+        { Type: BadgeType.Outlined, Color: BadgeColor.Yellow } => "bg-transparent text-yellow-500 border border-yellow-500",
+        _ => ""
+    };
+}
+
+<span class="@sharedClass @colorClass">
+    @Model.ChildContent
+</span>

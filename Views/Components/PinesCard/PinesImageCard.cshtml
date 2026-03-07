@@ -1,0 +1,15 @@
+@using PinesUI.StaticComponents.Views.Components.PinesCard;
+@model PinesImageCard;
+
+
+<div class="rounded-lg overflow-hidden border border-neutral-200/60 bg-white text-neutral-700 shadow-sm @Model.CssClass">
+    <div class="relative">
+        <img src="@Model.ImageUrl" class="w-full h-auto" />
+    </div>
+    <div class="p-7">
+        <h2 class="mb-2 text-lg font-bold leading-none tracking-tight">@Model.CardTitle</h2>
+        <div class="text-neutral-500">
+            @Model.RenderSlot(PinesImageCard.CardContentSlot)
+        </div>
+    </div>
+</div>
