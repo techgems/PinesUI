@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TechGems.StaticComponents;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesQuote;
+namespace TechGems.PinesUI.Views.Components.PinesQuote;
 
 public class PinesQuote : StaticComponent
 {

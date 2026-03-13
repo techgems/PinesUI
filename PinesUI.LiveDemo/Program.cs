@@ -1,7 +1,15 @@
+using AspNetStatic;
+using AspNetStaticContrib.AspNetStatic;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddSingleton<IStaticResourcesInfoProvider>(
+   new StaticResourcesInfoProvider()
+     .AddAllProjectRazorPages(builder.Environment)
+     .AddAllWebRootContent(builder.Environment));
 
 var app = builder.Build();
 
@@ -23,4 +31,5 @@ app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
 
+//app.GenerateStaticContent(@"C:\PinesUI Static");
 app.Run();

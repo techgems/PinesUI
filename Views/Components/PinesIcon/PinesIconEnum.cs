@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesIcon;
+namespace TechGems.PinesUI.Views.Components.PinesIcon;
 
 public enum PinesIconEnum
 {

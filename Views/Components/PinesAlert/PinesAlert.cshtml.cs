@@ -4,14 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 using TechGems.StaticComponents;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesAlert;
+namespace TechGems.PinesUI.Views.Components.PinesAlert;
 
 public class PinesAlert : StaticComponent
 {
-    public PinesAlert()
-    {
-        
-    }
 
     [HtmlAttributeName("type")]
     public PinesAlertTypeEnum AlertType { get; set; }

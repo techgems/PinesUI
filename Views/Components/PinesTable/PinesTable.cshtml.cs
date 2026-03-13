@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using TechGems.StaticComponents;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesTable;
+namespace TechGems.PinesUI.Views.Components.PinesTable;
 
 public class PinesTable : StaticComponent
 {

@@ -13,8 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-		<PackageReference Include="TechGems.StaticComponents" Version="1.1.0-alpha" />
+		<PackageReference Include="TechGems.StaticComponents" Version="1.1.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,12 +21,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="PinesUI.LiveDemo\**" />
+	  <Content Remove="PinesUI.LiveDemo\**" />
+	  <EmbeddedResource Remove="PinesUI.LiveDemo\**" />
+	  <None Remove="PinesUI.LiveDemo\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Content Remove="wwwroot\css\input.css" />
 	  <Content Remove="wwwroot\tailwind.config.js" />
 	</ItemGroup>
 
+
 	<ItemGroup>
-		<Folder Include="Views\Test\" />
 		<Folder Include="wwwroot\js\" />
 	</ItemGroup>
 

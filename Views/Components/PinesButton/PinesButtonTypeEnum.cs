@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesButton;
+namespace TechGems.PinesUI.Views.Components.PinesButton;
 
 public enum PinesButtonTypeEnum
 {

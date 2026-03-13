@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using TechGems.StaticComponents;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesBadge;
+namespace TechGems.PinesUI.Views.Components.PinesBadge;
 
 public class PinesBadge : StaticComponent
 {

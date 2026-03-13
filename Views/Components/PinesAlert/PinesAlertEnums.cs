@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesAlert;
+namespace TechGems.PinesUI.Views.Components.PinesAlert;
 
 public enum PinesAlertColorEnum
 {

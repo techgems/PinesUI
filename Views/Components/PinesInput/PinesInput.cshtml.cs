@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using TechGems.StaticComponents;
 
-namespace PinesUI.StaticComponents.TagHelpers.PinesInput;
+namespace TechGems.PinesUI.Views.Components.PinesInput;
 
 [HtmlTargetElement("pines-input")]
 public class PinesInput : StaticComponent

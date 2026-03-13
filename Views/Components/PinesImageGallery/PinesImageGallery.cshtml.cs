@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TechGems.StaticComponents;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesImageGallery;
+namespace TechGems.PinesUI.Views.Components.PinesImageGallery;
 
 public class PinesImageGallery : StaticComponent
 {

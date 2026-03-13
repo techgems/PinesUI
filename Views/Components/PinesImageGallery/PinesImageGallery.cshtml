@@ -1,8 +1,7 @@
-@using PinesUI.StaticComponents.Test
-@using PinesUI.StaticComponents.Views.Components.PinesImageGallery;
+@using TechGems.PinesUI.Views.Components.PinesImageGallery;
 @model PinesImageGallery;
 
-<div x-data="gallery"
+<div x-data="gallery(@TechGems.StaticComponents.JavascriptConvert.SerializeObject(Model.ImageList, true))"
     @@image-gallery-next.window="imageGalleryNext()"
     @@image-gallery-prev.window="imageGalleryPrev()"
     @@keyup.right.window="imageGalleryNext()"
@@ -42,13 +41,14 @@
         </div>
     </template>
 </div>
-<script static-script type="text/javascript" teleport-script>
+
+<script static-script type="text/javascript" teleport-script render-once="Model">
     document.addEventListener('alpine:init', () => {
-        Alpine.data('gallery', () => ({
+        Alpine.data('gallery', (imagesArray) => ({
             imageGalleryOpened: false,
             imageGalleryActiveUrl: null,
             imageGalleryImageIndex: null,
-            imageGallery: @(JavascriptConvert.SerializeObject(Model.ImageList)),
+            imageGallery: imagesArray,
             imageGalleryOpen(event) {
                 this.imageGalleryImageIndex=event.target.dataset.index;
                 this.imageGalleryActiveUrl=event.target.src;

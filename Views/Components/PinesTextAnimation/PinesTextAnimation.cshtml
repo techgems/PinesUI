@@ -1,0 +1,67 @@
+@using TechGems.PinesUI.Views.Components.PinesTextAnimation;
+@model PinesTextAnimation
+
+@{
+    var startingAnimation = Model.AnimationType switch
+    {
+        PinesTextAnimationTypeEnum.Scale => "{ opacity: 0, scale: 4 }",
+        PinesTextAnimationTypeEnum.SlideUp => "{ opacity: 0, y: 50, rotation: '25deg' }",
+        PinesTextAnimationTypeEnum.FadeIn => "{ opacity: 0 }",
+        _ => "{ opacity: 0 }"
+    };
+
+    var endingAnimation = Model.AnimationType switch
+    {
+        PinesTextAnimationTypeEnum.Scale => "{ opacity: 1, scale: 1, stagger: 0.07, duration: 1, ease: 'expo.out' }",
+        PinesTextAnimationTypeEnum.SlideUp => "{ opacity: 1, y: 0, rotation: '0deg', stagger: 0.02, duration: 0.7, ease: 'back' }",
+        PinesTextAnimationTypeEnum.FadeIn => "{ opacity: 1, stagger: 0.08, duration: 2.7, ease: 'expo.out' }",
+        _ => "{ opacity: 1, stagger: 0.08, duration: 2.7, ease: 'expo.out' }"
+    };
+}
+
+<span x-data="pinesTextAnimation" class="invisible block text-3xl font-bold">
+    @Model.ChildContent
+</span>
+
+<script static-script type="text/javascript" teleport-script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('pinesTextAnimation', () => ({
+            startingAnimation: @(startingAnimation),
+            endingAnimation: @(endingAnimation),
+            addCNDScript: true,
+            init() {
+                this.splitCharactersIntoSpans(this.$el);
+                if (this.addCNDScript) {
+                    this.addScriptToHead('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js');
+                }
+                let gsapInterval = setInterval(() => {
+                    if (typeof gsap !== 'undefined') {
+                        this.animateText();
+                        clearInterval(gsapInterval);
+                    }
+                }, 5);
+            },
+            animateText() {
+                this.$el.classList.remove('invisible');
+                gsap.fromTo(this.$el.children, this.startingAnimation, this.endingAnimation);
+            },
+            splitCharactersIntoSpans(element) {
+                let text = element.innerHTML;
+                let modifiedHTML = [];
+                for (let i = 0; i < text.length; i++) {
+                    let attributes = '';
+                    if (text[i].trim()) { attributes = 'class=\'inline-block\''; }
+                    modifiedHTML.push('<span ' + attributes + '>' + text[i] + '</span>');
+                }
+                element.innerHTML = modifiedHTML.join('');
+            },
+            addScriptToHead(url) {
+                if (!document.querySelector('script[src=\'' + url + '\']')) {
+                    let script = document.createElement('script');
+                    script.src = url;
+                    document.head.appendChild(script);
+                }
+            }
+        }))
+    })
+</script>

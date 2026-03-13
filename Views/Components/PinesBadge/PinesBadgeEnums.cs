@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesBadge;
+namespace TechGems.PinesUI.Views.Components.PinesBadge;
 
 public enum BadgeType
 {

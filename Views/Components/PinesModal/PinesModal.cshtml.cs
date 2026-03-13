@@ -1,6 +1,6 @@
 ﻿using TechGems.StaticComponents;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesModal;
+namespace TechGems.PinesUI.Views.Components.PinesModal;
 
 public class PinesModal : StaticComponent
 {

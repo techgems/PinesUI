@@ -1,4 +1,4 @@
-@using PinesUI.StaticComponents.Views.Components.PinesButton
+@using TechGems.PinesUI.Views.Components.PinesButton
 @model PinesButton;
 @{
     var sharedClass = "inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide transition-colors rounded-md";
@@ -6,25 +6,25 @@
 
 @if(Model.ButtonType == PinesButtonTypeEnum.Primary)
 {
-    var primaryStyles = "border focus:ring-2 focus:ring-offset-2 focus:shadow-outline focus:outline-none";
+    var primaryStyles = "border rounded focus:ring-2 focus:ring-offset-2 focus:shadow-outline focus:outline-none";
     var colorStyles = "";
 
     switch (Model.Color)
     {
         case PinesButtonColorEnum.Black:
-            colorStyles = "bg-neutral-950 hover:bg-neutral-900 focus:ring-neutral-900";
+            colorStyles = "bg-neutral-950 hover:bg-neutral-900 focus:ring-neutral-900 text-white";
             break;
         case PinesButtonColorEnum.Blue:
-            colorStyles = "bg-blue-600 rounded-md hover:bg-blue-700 focus:ring-blue-700";
+            colorStyles = "bg-blue-600 hover:bg-blue-700 focus:ring-blue-700 text-white";
             break;
         case PinesButtonColorEnum.Red:
-            colorStyles = "bg-red-600 rounded-md hover:bg-red-700 focus:ring-red-700";
+            colorStyles = "bg-red-600 hover:bg-red-700 focus:ring-red-700 text-white";
             break;
         case PinesButtonColorEnum.Green:
-            colorStyles = "bg-green-600 rounded-md hover:bg-green-700 focus:ring-green-700";
+            colorStyles = "bg-green-600 hover:bg-green-700 focus:ring-green-700 text-white";
             break;
         case PinesButtonColorEnum.Yellow:
-            colorStyles = "bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-600";
+            colorStyles = "bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-600 text-white";
             break;
         case PinesButtonColorEnum.Neutral:
         default:

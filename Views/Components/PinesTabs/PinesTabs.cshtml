@@ -1,0 +1,45 @@
+@using TechGems.PinesUI.Views.Components.PinesTabs;
+@model PinesTabs
+
+<div x-data="{
+        tabSelected: 1,
+        tabId: $id('tabs'),
+        tabButtonClicked(tabButton) {
+            this.tabSelected = tabButton.id.replace(this.tabId + '-', '');
+            this.tabRepositionMarker(tabButton);
+        },
+        tabRepositionMarker(tabButton) {
+            this.$refs.tabMarker.style.width = tabButton.offsetWidth + 'px';
+            this.$refs.tabMarker.style.height = tabButton.offsetHeight + 'px';
+            this.$refs.tabMarker.style.left = tabButton.offsetLeft + 'px';
+        },
+        tabContentActive(tabIndex) {
+            return this.tabSelected == tabIndex;
+        }
+    }"
+    x-init="tabRepositionMarker($refs.tabButtons.firstElementChild);"
+    class="relative w-full max-w-sm">
+
+    <div x-ref="tabButtons" class="relative inline-grid items-center justify-center w-full h-10 p-1 text-gray-500 bg-gray-100 rounded-lg select-none" style="grid-template-columns: repeat(@Model.TabNames.Count, minmax(0, 1fr));">
+        @for (int i = 0; i < Model.TabNames.Count; i++)
+        {
+            <button :id="tabId + '-' + @(i + 1)"
+                    @@click="tabButtonClicked($el);"
+                    type="button"
+                    class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm font-medium transition-all rounded-md cursor-pointer whitespace-nowrap">@Model.TabNames[i]</button>
+        }
+        <div x-ref="tabMarker" class="absolute left-0 z-10 w-1/2 h-full duration-300 ease-out" x-cloak>
+            <div class="w-full h-full bg-white rounded-md shadow-sm"></div>
+        </div>
+    </div>
+
+    <div class="relative w-full mt-2 content">
+        @for (int i = 0; i < Model.TabNames.Count; i++)
+        {
+            var slotName = $"tab-{i}";
+            <div x-show="tabContentActive(@(i + 1))" class="relative" @(i > 0 ? "x-cloak" : "")>
+                @Model.RenderSlot(slotName)
+            </div>
+        }
+    </div>
+</div>

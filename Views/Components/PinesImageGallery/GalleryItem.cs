@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PinesUI.StaticComponents.Views.Components.PinesImageGallery;
+namespace TechGems.PinesUI.Views.Components.PinesImageGallery;
 
 public class GalleryItem
 {
