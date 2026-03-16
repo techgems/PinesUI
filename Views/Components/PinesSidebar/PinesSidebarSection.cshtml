@@ -1,0 +1,10 @@
+@using TechGems.PinesUI.Views.Components.PinesSidebar;
+@model PinesSidebarSection
+
+<h4 class="relative px-2 pt-5 pb-3 text-sm font-semibold rounded-md">@Model.SectionName</h4>
+<div class="grid relative grid-flow-row auto-rows-max mb-7 text-sm">
+    @if(!Model.IsChildContentNullOrEmpty)
+    {
+        @Model.ChildContent
+    }
+</div>

@@ -1,1 +1,35 @@
+@using TechGems.PinesUI.Views.PinesSetup.PinesScripts;
+@model PinesScripts
+
+<!-- Alpine Plugins -->
+<script defer src="https://cdn.jsdelivr.net/npm/@@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+
+<!-- Alpine Core -->
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- Alpine Store -->
+<script static-script type="text/javascript" teleport-script render-once="Model">
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('pinesLayout', {
+            sidebarOpen: false,
+            largeScreen: false,
+            detectLargeScreenDisplay() {
+                if(window.innerWidth >= 1024){
+                    this.largeScreen = true;
+                } else {
+                    this.largeScreen = false;
+                }
+            },
+            toggleSidebar() {
+                console.log("Sidebar is being toggled.");
+                this.sidebarOpen = !this.sidebarOpen;
+            },
+            init() {
+                this.detectLargeScreenDisplay();
+                window.addEventListener('resize', () => {
+                    this.detectLargeScreenDisplay();
+                });
+            }
+        })
+    })
+</script>

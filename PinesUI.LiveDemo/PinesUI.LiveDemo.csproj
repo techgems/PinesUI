@@ -1,27 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Content Remove="wwwroot\input.css" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Remove="wwwroot\input.css" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="wwwroot\input.css" />
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="wwwroot\input.css" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AspNetStatic" Version="0.27.7" />
-    <PackageReference Include="AspNetStaticContrib" Version="1.2.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AspNetStatic" Version="0.27.7" />
+		<PackageReference Include="AspNetStaticContrib" Version="1.2.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TechGems.PinesUI.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\TechGems.PinesUI.csproj" />
+	</ItemGroup>
+
 
 	<Target Name="TailwindBuild" AfterTargets="AfterBuild">
 		<Exec Command="tailwindcss -i ./input.css -o ./css/site.tailwind.css" WorkingDirectory="wwwroot" />

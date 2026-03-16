@@ -1,0 +1,22 @@
+﻿@using TechGems.PinesUI.Views.Components.PinesSidebar;
+@model PinesSidebarLink
+
+@{
+    var activeMenuItemCss = Model.IsLinkActive ? "bg-gray-100 border-gray-200/60" : string.Empty;
+}
+
+@if(Model.Page is not null)
+{
+    <a asp-page="@Model.Page"
+           class="flex w-full items-center rounded-md border px-2 py-1.5 border-transparent hover:underline @activeMenuItemCss">
+        @Model.ChildContent
+    </a>
+}
+else
+{
+    <a asp-controller="@Model.Controller" asp-action="@Model.Action"
+           class="flex w-full items-center rounded-md border px-2 py-1.5 border-transparent hover:underline @activeMenuItemCss">
+        @Model.ChildContent
+    </a>
+}
+

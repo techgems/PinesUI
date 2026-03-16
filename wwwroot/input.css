@@ -1,6 +1,10 @@
 @source "../Views/**/*.cshtml";
 @import "tailwindcss";
 
+[x-cloak] {
+    display: none
+}
+
 @theme {
     --animate-marquee: marquee 20s linear infinite;
 

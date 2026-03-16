@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:devdojo.com)",
       "Bash(dotnet build)",
-      "Bash(dotnet build TechGems.PinesUI.csproj)"
+      "Bash(dotnet build TechGems.PinesUI.csproj)",
+      "Bash(node -e \":*)"
     ]
   }
 }

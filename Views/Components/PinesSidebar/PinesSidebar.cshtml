@@ -1,0 +1,19 @@
+@using TechGems.PinesUI.Views.Components.PinesSidebar;
+@model PinesSidebar
+
+<aside x-data 
+    :class="{
+    '-translate-x-full -ml-20': !$store.pinesLayout.largeScreen && !$store.pinesLayout.sidebarOpen,
+    'z-50 top-0 left-0 pl-4 ease-out duration-300': !$store.pinesLayout.largeScreen,
+    'z-20 mt-2': $store.pinesLayout.largeScreen
+    }"
+    class="block overflow-y-auto overflow-x-hidden fixed pr-5 pb-5 -mt-1 w-56 h-screen max-h-screen bg-white lg:pb-16 z-20 mt-2 transition-transform duration-300">
+
+    @* Vertical rule decoration *@
+    <div class="flex absolute inset-0 justify-end items-center w-full h-full pointer-events-none">
+        <div class="fixed top-[10px] w-px h-full bg-neutral-200"></div>
+    </div>
+
+    @Model.ChildContent
+</aside>
+
