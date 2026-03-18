@@ -1,0 +1,41 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.BreadcrumbsModel
+
+@{
+    ViewData["Title"] = "Breadcrumbs";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-breadcrumb>");
+    codeCreator.AppendLine(@"    <pines-breadcrumb-item asp-page=""/Index"" is-first=""true"" has-next=""true"">Home</pines-breadcrumb-item>");
+    codeCreator.AppendLine(@"    <pines-breadcrumb-item asp-page=""/Components/Alerts"" has-next=""true"">Components</pines-breadcrumb-item>");
+    codeCreator.AppendLine(@"    <pines-breadcrumb-item>Breadcrumbs</pines-breadcrumb-item>");
+    codeCreator.AppendLine(@"  </pines-breadcrumb>");
+
+    var breadcrumbsCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Breadcrumbs</h2>
+
+<h3>Breadcrumbs</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-breadcrumb>
+            <pines-breadcrumb-item asp-page="/Index" is-first="true" has-next="true">Home</pines-breadcrumb-item>
+            <pines-breadcrumb-item asp-page="/Components/Alerts" has-next="true">Components</pines-breadcrumb-item>
+            <pines-breadcrumb-item>Breadcrumbs</pines-breadcrumb-item>
+        </pines-breadcrumb>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@breadcrumbsCode"></code-highlight>
+    </slot>
+</pines-tabs>

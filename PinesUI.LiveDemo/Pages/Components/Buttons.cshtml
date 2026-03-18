@@ -1,0 +1,120 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.ButtonsModel
+
+@{
+    ViewData["Title"] = "Buttons";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+
+    // Primary Buttons code
+    codeCreator.AppendLine(@"<div class=""flex flex-wrap gap-3"">");
+    codeCreator.AppendLine(@"    <pines-button type=""Primary"" color=""Neutral"">Neutral</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Primary"" color=""Black"">Black</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Primary"" color=""Blue"">Blue</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Primary"" color=""Red"">Red</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Primary"" color=""Green"">Green</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Primary"" color=""Yellow"">Yellow</pines-button>");
+    codeCreator.AppendLine(@"</div>");
+    var primaryButtonsCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    // Secondary Buttons code
+    codeCreator.AppendLine(@"<div class=""flex flex-wrap gap-3"">");
+    codeCreator.AppendLine(@"    <pines-button type=""Secondary"" color=""Neutral"">Neutral</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Secondary"" color=""Black"">Black</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Secondary"" color=""Blue"">Blue</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Secondary"" color=""Red"">Red</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Secondary"" color=""Green"">Green</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Secondary"" color=""Yellow"">Yellow</pines-button>");
+    codeCreator.AppendLine(@"</div>");
+    var secondaryButtonsCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    // Outlined Buttons code
+    codeCreator.AppendLine(@"<div class=""flex flex-wrap gap-3"">");
+    codeCreator.AppendLine(@"    <pines-button type=""Outlined"" color=""Neutral"">Neutral</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Outlined"" color=""Black"">Black</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Outlined"" color=""Blue"">Blue</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Outlined"" color=""Red"">Red</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Outlined"" color=""Green"">Green</pines-button>");
+    codeCreator.AppendLine(@"    <pines-button type=""Outlined"" color=""Yellow"">Yellow</pines-button>");
+    codeCreator.AppendLine(@"</div>");
+    var outlinedButtonsCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    // Shadow Button code
+    codeCreator.AppendLine(@"<pines-shadow-button>Shadow Button</pines-shadow-button>");
+    var shadowButtonCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Buttons</h2>
+
+<h3>Primary Buttons</h3>
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-wrap gap-3">
+            <pines-button type="Primary" color="Neutral">Neutral</pines-button>
+            <pines-button type="Primary" color="Black">Black</pines-button>
+            <pines-button type="Primary" color="Blue">Blue</pines-button>
+            <pines-button type="Primary" color="Red">Red</pines-button>
+            <pines-button type="Primary" color="Green">Green</pines-button>
+            <pines-button type="Primary" color="Yellow">Yellow</pines-button>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@primaryButtonsCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Secondary Buttons</h3>
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-wrap gap-3">
+            <pines-button type="Secondary" color="Neutral">Neutral</pines-button>
+            <pines-button type="Secondary" color="Black">Black</pines-button>
+            <pines-button type="Secondary" color="Blue">Blue</pines-button>
+            <pines-button type="Secondary" color="Red">Red</pines-button>
+            <pines-button type="Secondary" color="Green">Green</pines-button>
+            <pines-button type="Secondary" color="Yellow">Yellow</pines-button>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@secondaryButtonsCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Outlined Buttons</h3>
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-wrap gap-3">
+            <pines-button type="Outlined" color="Neutral">Neutral</pines-button>
+            <pines-button type="Outlined" color="Black">Black</pines-button>
+            <pines-button type="Outlined" color="Blue">Blue</pines-button>
+            <pines-button type="Outlined" color="Red">Red</pines-button>
+            <pines-button type="Outlined" color="Green">Green</pines-button>
+            <pines-button type="Outlined" color="Yellow">Yellow</pines-button>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@outlinedButtonsCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Shadow Button</h3>
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-shadow-button>Shadow Button</pines-shadow-button>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@shadowButtonCode"></code-highlight>
+    </slot>
+</pines-tabs>

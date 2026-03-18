@@ -1,0 +1,153 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.IconModel
+
+@{
+    ViewData["Title"] = "Icon";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"<div class=""flex flex-wrap gap-4 items-center"">");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""ArrowUpDown"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">ArrowUpDown</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""User"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">User</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Card"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Card</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Settings"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Settings</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Keyboard"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Keyboard</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""People"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">People</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""UserPlus"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">UserPlus</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Plus"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Plus</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""CirclePlus"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">CirclePlus</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Email"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Email</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""SMS"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">SMS</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Github"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Github</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Help"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Help</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Cloud"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Cloud</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"    <div class=""flex flex-col items-center gap-1"">");
+    codeCreator.AppendLine(@"        <pines-icon icon=""Exit"" css-class=""w-6 h-6""></pines-icon>");
+    codeCreator.AppendLine(@"        <span class=""text-xs text-neutral-500"">Exit</span>");
+    codeCreator.AppendLine(@"    </div>");
+    codeCreator.AppendLine(@"</div>");
+    var iconsCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Icon</h2>
+
+<h3>All Icons</h3>
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-wrap gap-4 items-center">
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="ArrowUpDown" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">ArrowUpDown</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="User" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">User</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Card" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Card</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Settings" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Settings</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Keyboard" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Keyboard</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="People" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">People</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="UserPlus" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">UserPlus</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Plus" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Plus</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="CirclePlus" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">CirclePlus</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Email" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Email</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="SMS" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">SMS</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Github" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Github</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Help" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Help</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Cloud" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Cloud</span>
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <pines-icon icon="Exit" css-class="w-6 h-6"></pines-icon>
+                <span class="text-xs text-neutral-500">Exit</span>
+            </div>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@iconsCode"></code-highlight>
+    </slot>
+</pines-tabs>

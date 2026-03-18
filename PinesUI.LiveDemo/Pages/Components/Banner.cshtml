@@ -1,0 +1,33 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.BannerModel
+
+@{
+    ViewData["Title"] = "Banner";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-banner head=""Welcome to Pines UI"" body=""A collection of beautiful UI components built with Alpine.js and Tailwind CSS.""></pines-banner>");
+
+    var bannerCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Banner</h2>
+
+<h3>Banner</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-banner head="Welcome to Pines UI" body="A collection of beautiful UI components built with Alpine.js and Tailwind CSS."></pines-banner>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@bannerCode"></code-highlight>
+    </slot>
+</pines-tabs>

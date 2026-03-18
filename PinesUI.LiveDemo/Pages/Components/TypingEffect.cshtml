@@ -1,0 +1,60 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.TypingEffectModel
+
+@{
+    ViewData["Title"] = "Typing Effect";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    var typingTexts = new List<string>() { "Hello World", "Welcome to Pines UI", "Built with Alpine.js" };
+    var fastTexts = new List<string>() { "Fast typing", "Quick animation", "Speed demo" };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  @{");
+    codeCreator.AppendLine(@"      var typingTexts = new List<string>() { ""Hello World"", ""Welcome to Pines UI"", ""Built with Alpine.js"" };");
+    codeCreator.AppendLine(@"  }");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-typing-effect text-array=""typingTexts""></pines-typing-effect>");
+
+    var defaultSpeedCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    codeCreator.AppendLine(@"  @{");
+    codeCreator.AppendLine(@"      var fastTexts = new List<string>() { ""Fast typing"", ""Quick animation"", ""Speed demo"" };");
+    codeCreator.AppendLine(@"  }");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-typing-effect text-array=""fastTexts"" type-speed=""50"" pause-end=""800""></pines-typing-effect>");
+
+    var fastTypingCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Typing Effect</h2>
+
+<h3>Default Speed</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-typing-effect text-array="typingTexts"></pines-typing-effect>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@defaultSpeedCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Fast Typing</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-typing-effect text-array="fastTexts" type-speed="50" pause-end="800"></pines-typing-effect>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@fastTypingCode"></code-highlight>
+    </slot>
+</pines-tabs>

@@ -1,8 +1,43 @@
-﻿@page
+@page
+@using System.Text
 @using TechGems.PinesUI.Views.Components.PinesTabs
 @model PinesUI.LiveDemo.Pages.Components.TabsModel
+
 @{
+    ViewData["Title"] = "Tabs";
+
     var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  @{");
+    codeCreator.AppendLine(@"      var tabConfig = new Dictionary<string, PinesTabConfigItem>()");
+    codeCreator.AppendLine(@"      {");
+    codeCreator.AppendLine(@"          { ""TabOne"", new PinesTabConfigItem { TabName = ""January"", Order = 1 } },");
+    codeCreator.AppendLine(@"          { ""TabTwo"", new PinesTabConfigItem { TabName = ""February"", Order = 2 } },");
+    codeCreator.AppendLine(@"          { ""TabThree"", new PinesTabConfigItem { TabName = ""March"", Order = 3 } },");
+    codeCreator.AppendLine(@"      };");
+    codeCreator.AppendLine(@"  }");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-tabs tab-config=""tabConfig"">");
+    codeCreator.AppendLine(@"      <slot name=""TabOne"">");
+    codeCreator.AppendLine(@"          <p>This is the content of Tab 1.</p>");
+    codeCreator.AppendLine(@"      </slot>");
+    codeCreator.AppendLine(@"      <slot name=""TabTwo"">");
+    codeCreator.AppendLine(@"          <p>This is the content of Tab 2.</p>");
+    codeCreator.AppendLine(@"      </slot>");
+    codeCreator.AppendLine(@"      <slot name=""TabThree"">");
+    codeCreator.AppendLine(@"          <p>This is the content of Tab 3.</p>");
+    codeCreator.AppendLine(@"      </slot>");
+    codeCreator.AppendLine(@"  </pines-tabs>");
+
+    var tabsCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    var demoTabConfig = new Dictionary<string, PinesTabConfigItem>()
     {
         { "TabOne", new PinesTabConfigItem { TabName = "January", Order = 1 } },
         { "TabTwo", new PinesTabConfigItem { TabName = "February", Order = 2 } },
@@ -10,17 +45,25 @@
     };
 }
 
-
 <h2>Tabs</h2>
 
+<h3>Basic Tabs</h3>
+
 <pines-tabs tab-config="tabConfig">
-    <slot name="TabOne">
-        <p>This is the content of Tab 1.</p>
+    <slot name="Preview">
+        <pines-tabs tab-config="demoTabConfig">
+            <slot name="TabOne">
+                <p>This is the content of Tab 1.</p>
+            </slot>
+            <slot name="TabTwo">
+                <p>This is the content of Tab 2.</p>
+            </slot>
+            <slot name="TabThree">
+                <p>This is the content of Tab 3.</p>
+            </slot>
+        </pines-tabs>
     </slot>
-    <slot name="TabTwo">
-        <p>This is the content of Tab 2.</p>
-    </slot>
-    <slot name="TabThree">
-        <p>This is the content of Tab 3.</p>
+    <slot name="Code">
+        <code-highlight lang="html" code="@tabsCode"></code-highlight>
     </slot>
 </pines-tabs>

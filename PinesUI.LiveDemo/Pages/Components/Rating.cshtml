@@ -1,0 +1,65 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.RatingModel
+
+@{
+    ViewData["Title"] = "Rating";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-rating max-stars=""5"" initial-value=""3""></pines-rating>");
+
+    var starRatingCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    codeCreator.AppendLine(@"  <pines-rating max-stars=""5"" initial-value=""2"" rating-type=""Heart""></pines-rating>");
+
+    var heartRatingCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    codeCreator.AppendLine(@"  <pines-rating max-stars=""5"" initial-value=""4"" disabled=""true""></pines-rating>");
+
+    var disabledRatingCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Rating</h2>
+
+<h3>Star Rating</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-rating max-stars="5" initial-value="3"></pines-rating>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@starRatingCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Heart Rating</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-rating max-stars="5" initial-value="2" rating-type="Heart"></pines-rating>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@heartRatingCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Disabled Rating</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-rating max-stars="5" initial-value="4" disabled="true"></pines-rating>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@disabledRatingCode"></code-highlight>
+    </slot>
+</pines-tabs>

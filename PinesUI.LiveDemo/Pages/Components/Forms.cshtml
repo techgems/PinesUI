@@ -1,4 +1,117 @@
-﻿@page
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
 @model PinesUI.LiveDemo.Pages.Components.FormsModel
+
 @{
+    ViewData["Title"] = "Forms";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    // Input code
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-input show-label=""true"" asp-for=""YourModel.Name""></pines-input>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-input show-label=""true"" disabled=""true"" asp-for=""YourModel.Email""></pines-input>");
+    var inputCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    // Switch code
+    codeCreator.AppendLine(@"  <pines-switch label=""Enable notifications""></pines-switch>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-switch label=""Dark mode"" switch-on=""true""></pines-switch>");
+    var switchCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    // Select code
+    codeCreator.AppendLine(@"  @{");
+    codeCreator.AppendLine(@"      var selectItems = new List<PinesSelectItem>()");
+    codeCreator.AppendLine(@"      {");
+    codeCreator.AppendLine(@"          new PinesSelectItem { Title = ""Apple"", Value = ""apple"" },");
+    codeCreator.AppendLine(@"          new PinesSelectItem { Title = ""Banana"", Value = ""banana"" },");
+    codeCreator.AppendLine(@"          new PinesSelectItem { Title = ""Cherry"", Value = ""cherry"" },");
+    codeCreator.AppendLine(@"          new PinesSelectItem { Title = ""Grape"", Value = ""grape"", Disabled = true },");
+    codeCreator.AppendLine(@"      };");
+    codeCreator.AppendLine(@"  }");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-select items=""selectItems"" placeholder=""Choose a fruit""></pines-select>");
+    var selectCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    // DatePicker code
+    codeCreator.AppendLine(@"  <pines-date-picker label=""Event Date"" placeholder=""Pick a date""></pines-date-picker>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-date-picker label=""ISO Format"" date-format=""YYYY-MM-DD""></pines-date-picker>");
+    var datePickerCode = codeCreator.ToString();
+    codeCreator.Clear();
 }
+
+<h2>Forms</h2>
+
+<h3>Input</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-col gap-4 max-w-sm">
+            <pines-input show-label="true"></pines-input>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@inputCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Switch</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-col gap-4">
+            <pines-switch label="Enable notifications"></pines-switch>
+            <pines-switch label="Dark mode" switch-on="true"></pines-switch>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@switchCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+@{
+    var selectItems = new List<TechGems.PinesUI.Views.Components.PinesSelect.PinesSelectItem>()
+    {
+        new TechGems.PinesUI.Views.Components.PinesSelect.PinesSelectItem { Title = "Apple", Value = "apple" },
+        new TechGems.PinesUI.Views.Components.PinesSelect.PinesSelectItem { Title = "Banana", Value = "banana" },
+        new TechGems.PinesUI.Views.Components.PinesSelect.PinesSelectItem { Title = "Cherry", Value = "cherry" },
+        new TechGems.PinesUI.Views.Components.PinesSelect.PinesSelectItem { Title = "Grape", Value = "grape", Disabled = true },
+    };
+}
+
+<h3>Select</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="max-w-sm">
+            <pines-select items="selectItems" placeholder="Choose a fruit"></pines-select>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@selectCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Date Picker</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-col gap-6">
+            <pines-date-picker label="Event Date" placeholder="Pick a date"></pines-date-picker>
+            <pines-date-picker label="ISO Format" date-format="YYYY-MM-DD"></pines-date-picker>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@datePickerCode"></code-highlight>
+    </slot>
+</pines-tabs>

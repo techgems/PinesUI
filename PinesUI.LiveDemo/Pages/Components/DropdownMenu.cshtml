@@ -1,0 +1,41 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.DropdownMenuModel
+
+@{
+    ViewData["Title"] = "Dropdown Menu";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"<pines-dropdown-menu header=""My Account"" user-name=""John Doe"" image-url=""https://placehold.co/100x100"">");
+    codeCreator.AppendLine(@"    <dropdown-menu-option link=""#"">Profile</dropdown-menu-option>");
+    codeCreator.AppendLine(@"    <dropdown-menu-option link=""#"">Settings</dropdown-menu-option>");
+    codeCreator.AppendLine(@"    <dropdown-separator></dropdown-separator>");
+    codeCreator.AppendLine(@"    <dropdown-menu-option link=""#"">Log out</dropdown-menu-option>");
+    codeCreator.AppendLine(@"</pines-dropdown-menu>");
+    var dropdownMenuCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Dropdown Menu</h2>
+
+<h3>Dropdown Menu</h3>
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-dropdown-menu header="My Account" user-name="John Doe" image-url="https://placehold.co/100x100">
+            <dropdown-menu-option link="#">Profile</dropdown-menu-option>
+            <dropdown-menu-option link="#">Settings</dropdown-menu-option>
+            <dropdown-separator></dropdown-separator>
+            <dropdown-menu-option link="#">Log out</dropdown-menu-option>
+        </pines-dropdown-menu>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@dropdownMenuCode"></code-highlight>
+    </slot>
+</pines-tabs>

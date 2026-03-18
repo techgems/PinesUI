@@ -28,14 +28,9 @@
         Alpine.data('pinesTextAnimation', (startingAnimation, endingAnimation) => ({
             startingAnimation: startingAnimation,
             endingAnimation: endingAnimation,
-            addCNDScript: true,
             init() {
-                console.log("Test that it works!");
                 this.splitCharactersIntoSpans(this.$el);
-                //TODO: ADD THIS INTO THE GENERAL SCRIPTS COMPONENT INSTEAD OF LOADING IT LIKE THIS.
-                if (this.addCNDScript) {
-                    this.addScriptToHead('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js');
-                }
+                
                 let gsapInterval = setInterval(() => {
                     if (typeof gsap !== 'undefined') {
                         this.animateText();
@@ -56,13 +51,6 @@
                     modifiedHTML.push('<span ' + attributes + '>' + text[i] + '</span>');
                 }
                 element.innerHTML = modifiedHTML.join('');
-            },
-            addScriptToHead(url) {
-                if (!document.querySelector('script[src=\'' + url + '\']')) {
-                    let script = document.createElement('script');
-                    script.src = url;
-                    document.head.appendChild(script);
-                }
             }
         }))
     })

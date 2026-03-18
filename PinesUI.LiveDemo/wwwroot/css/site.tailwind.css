@@ -7,10 +7,14 @@
     'Noto Color Emoji';
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
+    --color-neutral-500: oklch(55.6% 0 0);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-sm: 24rem;
     --container-7xl: 80rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
@@ -552,6 +556,9 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
   .w-25 {
     width: calc(var(--spacing) * 25);
   }
@@ -575,6 +582,9 @@
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
+  }
+  .max-w-sm {
+    max-width: var(--container-sm);
   }
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
@@ -622,6 +632,9 @@
   .resize {
     resize: both;
   }
+  .flex-col {
+    flex-direction: column;
+  }
   .flex-row {
     flex-direction: row;
   }
@@ -636,6 +649,9 @@
   }
   .flex-wrap-reverse {
     flex-wrap: wrap-reverse;
+  }
+  .items-center {
+    align-items: center;
   }
   .items-start {
     align-items: flex-start;
@@ -657,6 +673,9 @@
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
   }
   .truncate {
     overflow: hidden;
@@ -907,6 +926,10 @@
   .align-top {
     vertical-align: top;
   }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
   .text-nowrap {
     text-wrap: nowrap;
   }
@@ -915,6 +938,9 @@
   }
   .text-black {
     color: var(--color-black);
+  }
+  .text-neutral-500 {
+    color: var(--color-neutral-500);
   }
   .text-white {
     color: var(--color-white);
@@ -1013,9 +1039,9 @@
       display: block;
     }
   }
-  .lg\:pl-60 {
+  .lg\:pl-63 {
     @media (width >= 64rem) {
-      padding-left: calc(var(--spacing) * 60);
+      padding-left: calc(var(--spacing) * 63);
     }
   }
 }

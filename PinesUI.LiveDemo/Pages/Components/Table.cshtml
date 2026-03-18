@@ -1,0 +1,63 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.TableModel
+
+@{
+    ViewData["Title"] = "Table";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    var columns = new List<(string Name, string DisplayName)>()
+    {
+        ("Name", "Name"),
+        ("Email", "Email"),
+        ("Role", "Role"),
+    };
+
+    var tableData = new List<object>()
+    {
+        new { Name = "John Doe", Email = "john@example.com", Role = "Admin" },
+        new { Name = "Jane Smith", Email = "jane@example.com", Role = "Editor" },
+        new { Name = "Bob Wilson", Email = "bob@example.com", Role = "Viewer" },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  @{");
+    codeCreator.AppendLine(@"      var columns = new List<(string Name, string DisplayName)>()");
+    codeCreator.AppendLine(@"      {");
+    codeCreator.AppendLine(@"          (""Name"", ""Name""),");
+    codeCreator.AppendLine(@"          (""Email"", ""Email""),");
+    codeCreator.AppendLine(@"          (""Role"", ""Role""),");
+    codeCreator.AppendLine(@"      };");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"      var tableData = new List<object>()");
+    codeCreator.AppendLine(@"      {");
+    codeCreator.AppendLine(@"          new { Name = ""John Doe"", Email = ""john@example.com"", Role = ""Admin"" },");
+    codeCreator.AppendLine(@"          new { Name = ""Jane Smith"", Email = ""jane@example.com"", Role = ""Editor"" },");
+    codeCreator.AppendLine(@"          new { Name = ""Bob Wilson"", Email = ""bob@example.com"", Role = ""Viewer"" },");
+    codeCreator.AppendLine(@"      };");
+    codeCreator.AppendLine(@"  }");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-table table-id=""demo-table"" column-config=""columns"" data=""tableData""></pines-table>");
+
+    var tableCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Table</h2>
+
+<h3>Table</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-table table-id="demo-table" column-config="columns" data="tableData"></pines-table>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@tableCode"></code-highlight>
+    </slot>
+</pines-tabs>

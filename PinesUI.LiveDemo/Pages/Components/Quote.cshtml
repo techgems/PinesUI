@@ -1,0 +1,37 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.QuoteModel
+
+@{
+    ViewData["Title"] = "Quote";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-quote author=""Jane Smith"" author-title=""CEO, TechCorp"" image-url=""https://placehold.co/100x100"" image-alt=""Jane Smith"">");
+    codeCreator.AppendLine(@"    Innovation distinguishes between a leader and a follower. The best way to predict the future is to create it.");
+    codeCreator.AppendLine(@"  </pines-quote>");
+
+    var quoteCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Quote</h2>
+
+<h3>Quote</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-quote author="Jane Smith" author-title="CEO, TechCorp" image-url="https://placehold.co/100x100" image-alt="Jane Smith">
+            Innovation distinguishes between a leader and a follower. The best way to predict the future is to create it.
+        </pines-quote>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@quoteCode"></code-highlight>
+    </slot>
+</pines-tabs>

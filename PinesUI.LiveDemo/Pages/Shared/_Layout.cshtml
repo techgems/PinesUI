@@ -36,17 +36,28 @@
             </pines-sidebar-section>
             <pines-sidebar-section section-name="Elements">
                 <pines-sidebar-link asp-page="/Components/Alerts">Alerts</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Badge">Badge</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Banner">Banner</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Breadcrumbs">Breadcrumbs</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Buttons">Buttons</pines-sidebar-link>
                 <pines-sidebar-link asp-page="/Components/Cards">Cards</pines-sidebar-link>
-                <pines-sidebar-link asp-page="/Components/Modal">Modal</pines-sidebar-link>
-                <pines-sidebar-link asp-page="/Components/Marquee">Marquee</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/DropdownMenu">Dropdown Menu</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Forms">Forms</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Icon">Icon</pines-sidebar-link>
                 <pines-sidebar-link asp-page="/Components/ImageGallery">Image Gallery</pines-sidebar-link>
-                <pines-sidebar-link asp-page="/Components/TextAnimation">Text Animation</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Marquee">Marquee</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Modal">Modal</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Quote">Quote</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Rating">Rating</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Table">Table</pines-sidebar-link>
                 <pines-sidebar-link asp-page="/Components/Tabs">Tabs</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/TextAnimation">Text Animation</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/TypingEffect">Typing Effect</pines-sidebar-link>
             </pines-sidebar-section>
         </pines-sidebar>
 
         @* Main content area — offset by sidebar width on large screens *@
-        <main role="main" class="flex-1 w-full min-w-0 pl-0 lg:pl-60 pb-16">
+        <main role="main" class="flex-1 w-full min-w-0 pl-0 lg:pl-63 pb-16 pt-5">
             @RenderBody()
         </main>
     </div>

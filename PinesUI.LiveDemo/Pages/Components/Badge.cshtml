@@ -1,0 +1,107 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.BadgeModel
+
+@{
+    ViewData["Title"] = "Badge";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <div class=""flex flex-wrap gap-2"">");
+    codeCreator.AppendLine(@"    <pines-badge type=""Primary"" color=""Neutral"">Neutral</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Primary"" color=""Blue"">Blue</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Primary"" color=""Red"">Red</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Primary"" color=""Yellow"">Yellow</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Primary"" color=""Purple"">Purple</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Primary"" color=""Green"">Green</pines-badge>");
+    codeCreator.AppendLine(@"  </div>");
+
+    var primaryBadgesCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    codeCreator.AppendLine(@"  <div class=""flex flex-wrap gap-2"">");
+    codeCreator.AppendLine(@"    <pines-badge type=""Secondary"" color=""Neutral"">Neutral</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Secondary"" color=""Blue"">Blue</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Secondary"" color=""Red"">Red</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Secondary"" color=""Yellow"">Yellow</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Secondary"" color=""Purple"">Purple</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Secondary"" color=""Green"">Green</pines-badge>");
+    codeCreator.AppendLine(@"  </div>");
+
+    var secondaryBadgesCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    codeCreator.AppendLine(@"  <div class=""flex flex-wrap gap-2"">");
+    codeCreator.AppendLine(@"    <pines-badge type=""Outlined"" color=""Neutral"">Neutral</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Outlined"" color=""Blue"">Blue</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Outlined"" color=""Red"">Red</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Outlined"" color=""Yellow"">Yellow</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Outlined"" color=""Purple"">Purple</pines-badge>");
+    codeCreator.AppendLine(@"    <pines-badge type=""Outlined"" color=""Green"">Green</pines-badge>");
+    codeCreator.AppendLine(@"  </div>");
+
+    var outlinedBadgesCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Badge</h2>
+
+<h3>Primary Badges</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-wrap gap-2">
+            <pines-badge type="Primary" color="Neutral">Neutral</pines-badge>
+            <pines-badge type="Primary" color="Blue">Blue</pines-badge>
+            <pines-badge type="Primary" color="Red">Red</pines-badge>
+            <pines-badge type="Primary" color="Yellow">Yellow</pines-badge>
+            <pines-badge type="Primary" color="Purple">Purple</pines-badge>
+            <pines-badge type="Primary" color="Green">Green</pines-badge>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@primaryBadgesCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Secondary Badges</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-wrap gap-2">
+            <pines-badge type="Secondary" color="Neutral">Neutral</pines-badge>
+            <pines-badge type="Secondary" color="Blue">Blue</pines-badge>
+            <pines-badge type="Secondary" color="Red">Red</pines-badge>
+            <pines-badge type="Secondary" color="Yellow">Yellow</pines-badge>
+            <pines-badge type="Secondary" color="Purple">Purple</pines-badge>
+            <pines-badge type="Secondary" color="Green">Green</pines-badge>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@secondaryBadgesCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Outlined Badges</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-wrap gap-2">
+            <pines-badge type="Outlined" color="Neutral">Neutral</pines-badge>
+            <pines-badge type="Outlined" color="Blue">Blue</pines-badge>
+            <pines-badge type="Outlined" color="Red">Red</pines-badge>
+            <pines-badge type="Outlined" color="Yellow">Yellow</pines-badge>
+            <pines-badge type="Outlined" color="Purple">Purple</pines-badge>
+            <pines-badge type="Outlined" color="Green">Green</pines-badge>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@outlinedBadgesCode"></code-highlight>
+    </slot>
+</pines-tabs>
