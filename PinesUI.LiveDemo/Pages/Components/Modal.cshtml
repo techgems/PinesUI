@@ -1,0 +1,37 @@
+﻿@page
+@model PinesUI.LiveDemo.Pages.Components.ModalModel
+
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+
+@{
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-modal button-text=""Open Modal"">");
+    codeCreator.AppendLine(@"    There is a message inside.");
+    codeCreator.AppendLine(@"  </pines-modal>");
+
+
+    var modalCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+}
+
+<h2>Pines Modal</h2>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-modal button-text="Open Modal">
+            There is a message inside.
+        </pines-modal>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@modalCode"></code-highlight>
+    </slot>
+</pines-tabs>
+

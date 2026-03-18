@@ -1,8 +1,13 @@
 @using TechGems.PinesUI.Views.Components.PinesTabs;
 @model PinesTabs
 
+@{
+    var orderedTabs = Model.TabConfig.OrderBy(x => x.Value.Order);
+    var defaultTabKey = orderedTabs.First().Key;
+}
+
 <div x-data="{
-        tabSelected: 1,
+        tabSelected: '@defaultTabKey',
         tabId: $id('tabs'),
         tabButtonClicked(tabButton) {
             this.tabSelected = tabButton.id.replace(this.tabId + '-', '');
@@ -18,15 +23,15 @@
         }
     }"
     x-init="tabRepositionMarker($refs.tabButtons.firstElementChild);"
-    class="relative w-full max-w-sm">
+    class="relative w-full @Model.Class">
 
-    <div x-ref="tabButtons" class="relative inline-grid items-center justify-center w-full h-10 p-1 text-gray-500 bg-gray-100 rounded-lg select-none" style="grid-template-columns: repeat(@Model.TabNames.Count, minmax(0, 1fr));">
-        @for (int i = 0; i < Model.TabNames.Count; i++)
+    <div x-ref="tabButtons" class="relative inline-grid items-center justify-center w-full h-10 p-1 text-gray-500 bg-gray-100 rounded-lg select-none" style="grid-template-columns: repeat(@Model.TabConfig.Count, minmax(0, 1fr));">
+        @foreach(var tab in Model.TabConfig)
         {
-            <button :id="tabId + '-' + @(i + 1)"
+            <button :id="tabId + '-' + '@tab.Key'"
                     @@click="tabButtonClicked($el);"
                     type="button"
-                    class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm font-medium transition-all rounded-md cursor-pointer whitespace-nowrap">@Model.TabNames[i]</button>
+                    class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm font-medium transition-all rounded-md cursor-pointer whitespace-nowrap">@tab.Value.TabName</button>
         }
         <div x-ref="tabMarker" class="absolute left-0 z-10 w-1/2 h-full duration-300 ease-out" x-cloak>
             <div class="w-full h-full bg-white rounded-md shadow-sm"></div>
@@ -34,11 +39,10 @@
     </div>
 
     <div class="relative w-full mt-2 content">
-        @for (int i = 0; i < Model.TabNames.Count; i++)
+        @foreach(var tab in Model.TabConfig)
         {
-            var slotName = $"tab-{i}";
-            <div x-show="tabContentActive(@(i + 1))" class="relative" @(i > 0 ? "x-cloak" : "")>
-                @Model.RenderSlot(slotName)
+            <div x-show="tabContentActive('@tab.Key')" class="relative" @(defaultTabKey != tab.Key ? "x-cloak" : "")>
+                @Model.RenderSlot(tab.Key)
             </div>
         }
     </div>

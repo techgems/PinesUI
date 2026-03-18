@@ -6,6 +6,8 @@ namespace TechGems.PinesUI.Views.Components.PinesTabs;
 
 public class PinesTabs : StaticComponent
 {
-    [HtmlAttributeName("tab-names")]
-    public List<string> TabNames { get; set; } = new List<string>();
+    [HtmlAttributeName("tab-config")]
+    public Dictionary<string, PinesTabConfigItem> TabConfig { get; set; } = new Dictionary<string, PinesTabConfigItem>();
+
+    public string Class { get; set; }
 }

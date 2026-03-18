@@ -1,0 +1,26 @@
+﻿@page
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.TabsModel
+@{
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "TabOne", new PinesTabConfigItem { TabName = "January", Order = 1 } },
+        { "TabTwo", new PinesTabConfigItem { TabName = "February", Order = 2 } },
+        { "TabThree", new PinesTabConfigItem { TabName = "March", Order = 3 } },
+    };
+}
+
+
+<h2>Tabs</h2>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="TabOne">
+        <p>This is the content of Tab 1.</p>
+    </slot>
+    <slot name="TabTwo">
+        <p>This is the content of Tab 2.</p>
+    </slot>
+    <slot name="TabThree">
+        <p>This is the content of Tab 3.</p>
+    </slot>
+</pines-tabs>

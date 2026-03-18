@@ -1,0 +1,9 @@
+﻿@model PinesUI.LiveDemo.Views.Components.CodeHighlight
+
+<pre>
+    <code class="@Model.Lang">@Model.Code</code>
+</pre>
+
+<script static-script teleport-script render-once="Model">
+    hljs.highlightAll();
+</script>

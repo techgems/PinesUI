@@ -19,18 +19,20 @@
     };
 }
 
-<span x-data="pinesTextAnimation" class="invisible block text-3xl font-bold">
+<span x-data="pinesTextAnimation(@(startingAnimation), @(endingAnimation))" class="invisible block text-3xl font-bold">
     @Model.ChildContent
 </span>
 
-<script static-script type="text/javascript" teleport-script>
+<script static-script type="text/javascript" teleport-script render-once="Model">
     document.addEventListener('alpine:init', () => {
-        Alpine.data('pinesTextAnimation', () => ({
-            startingAnimation: @(startingAnimation),
-            endingAnimation: @(endingAnimation),
+        Alpine.data('pinesTextAnimation', (startingAnimation, endingAnimation) => ({
+            startingAnimation: startingAnimation,
+            endingAnimation: endingAnimation,
             addCNDScript: true,
             init() {
+                console.log("Test that it works!");
                 this.splitCharactersIntoSpans(this.$el);
+                //TODO: ADD THIS INTO THE GENERAL SCRIPTS COMPONENT INSTEAD OF LOADING IT LIKE THIS.
                 if (this.addCNDScript) {
                     this.addScriptToHead('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js');
                 }

@@ -1,0 +1,43 @@
+﻿@page
+@model PinesUI.LiveDemo.Components.ComponentPages.CardsModel
+
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesCard
+@using TechGems.PinesUI.Views.Components.PinesTabs
+
+@{
+    ViewData["Title"] = "Alerts";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-image-card image-url=""https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"" class=""w-[380px]"" title=""Card Title"">");
+    codeCreator.AppendLine(@"    <slot name=""@PinesImageCard.CardContentSlot"">");
+    codeCreator.AppendLine(@"      This is my card's content.");
+    codeCreator.AppendLine(@"    </slot>");
+    codeCreator.AppendLine(@"  </pines-image-card>");
+
+    var primaryBlueAlertCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Cards</h2>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-image-card image-url="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" class="w-[380px]" title="Card Title">
+            <slot name="@PinesImageCard.CardContentSlot">
+                This is my card's content.
+            </slot>
+
+        </pines-image-card>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@primaryBlueAlertCode"></code-highlight>
+    </slot>
+</pines-tabs>
+

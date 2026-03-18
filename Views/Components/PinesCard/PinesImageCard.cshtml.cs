@@ -20,6 +20,6 @@ public class PinesImageCard : StaticComponent
     [HtmlAttributeName("title")]
     public string CardTitle { get; set; }
 
-    public string CssClass { get; set; }
+    public string Class { get; set; }
 
 }

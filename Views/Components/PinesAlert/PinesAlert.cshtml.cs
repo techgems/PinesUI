@@ -15,5 +15,8 @@ public class PinesAlert : StaticComponent
     [HtmlAttributeName("color")]
     public PinesAlertColorEnum AlertColor { get; set; }
 
+    [HtmlAttributeName("class")]
+    public string Class { get; set; } = string.Empty;
+
     public string Header { get; set; }
 }

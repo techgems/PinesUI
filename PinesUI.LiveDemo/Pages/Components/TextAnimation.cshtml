@@ -1,0 +1,34 @@
+﻿@page
+@model PinesUI.LiveDemo.Pages.Components.TextAnimationModel
+
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+
+@{
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-text-animation animation-type=""Scale"">");
+    codeCreator.AppendLine(@"    There is a message inside.");
+    codeCreator.AppendLine(@"  </pines-text-animation>");
+
+    var textAnimationCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Text Animation</h2>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-text-animation animation-type="Scale">
+            There is a message inside.
+        </pines-text-animation>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@textAnimationCode"></code-highlight>
+    </slot>
+</pines-tabs>

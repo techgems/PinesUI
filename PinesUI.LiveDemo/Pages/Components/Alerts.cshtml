@@ -1,0 +1,106 @@
+﻿@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Components.AlertsModel
+
+@{
+    ViewData["Title"] = "Alerts";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"  <pines-alert type=""Primary"" color=""Blue"" header=""Alert Message Headline"">");
+    codeCreator.AppendLine(@"    This is the subtext for your alert message, providing important information or instructions.");
+    codeCreator.AppendLine(@"  </pines-alert>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-alert type=""Primary"" color=""Red"" header=""Alert Message Headline"">");
+    codeCreator.AppendLine(@"    This is the subtext for your alert message, providing important information or instructions.");
+    codeCreator.AppendLine(@"  </pines-alert>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-alert type=""Primary"" color=""Yellow"" header=""Alert Message Headline"">");
+    codeCreator.AppendLine(@"    This is the subtext for your alert message, providing important information or instructions.");
+    codeCreator.AppendLine(@"  </pines-alert>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-alert type=""Primary"" color=""Green"" header=""Alert Message Headline"">");
+    codeCreator.AppendLine(@"    This is the subtext for your alert message, providing important information or instructions.");
+    codeCreator.AppendLine(@"  </pines-alert>");
+
+    var primaryAlertsCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+
+    codeCreator.AppendLine(@"  <pines-alert type=""Secondary"" color=""Blue"" header=""Alert Message Headline"">");
+    codeCreator.AppendLine(@"    This is the subtext for your alert message, providing important information or instructions.");
+    codeCreator.AppendLine(@"  </pines-alert>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-alert type=""Secondary"" color=""Red"" header=""Alert Message Headline"">");
+    codeCreator.AppendLine(@"    This is the subtext for your alert message, providing important information or instructions.");
+    codeCreator.AppendLine(@"  </pines-alert>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-alert type=""Secondary"" color=""Yellow"" header=""Alert Message Headline"">");
+    codeCreator.AppendLine(@"    This is the subtext for your alert message, providing important information or instructions.");
+    codeCreator.AppendLine(@"  </pines-alert>");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-alert type=""Secondary"" color=""Green"" header=""Alert Message Headline"">");
+    codeCreator.AppendLine(@"    This is the subtext for your alert message, providing important information or instructions.");
+    codeCreator.AppendLine(@"  </pines-alert>");
+
+    var secondaryAlertsCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Alerts</h2>
+
+<h3>Primary Alerts</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-alert type="Primary" color="Blue" header="Alert Message Headline" class="mb-5">
+            This is the subtext for your alert message, providing important information or instructions.
+        </pines-alert>
+
+        <pines-alert type="Primary" color="Red" header="Alert Message Headline" class="mb-5">
+            This is the subtext for your alert message, providing important information or instructions.
+        </pines-alert>
+
+        <pines-alert type="Primary" color="Yellow" header="Alert Message Headline" class="mb-5">
+            This is the subtext for your alert message, providing important information or instructions.
+        </pines-alert>
+
+        <pines-alert type="Primary" color="Green" header="Alert Message Headline" class="mb-5">
+            This is the subtext for your alert message, providing important information or instructions.
+        </pines-alert>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@primaryAlertsCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+<h3>Secondary Alerts</h3>
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <pines-alert type="Secondary" color="Blue" header="Alert Message Headline" class="mb-5">
+            This is the subtext for your alert message, providing important information or instructions.
+        </pines-alert>
+
+        <pines-alert type="Secondary" color="Red" header="Alert Message Headline" class="mb-5">
+            This is the subtext for your alert message, providing important information or instructions.
+        </pines-alert>
+
+        <pines-alert type="Secondary" color="Yellow" header="Alert Message Headline" class="mb-5">
+            This is the subtext for your alert message, providing important information or instructions.
+        </pines-alert>
+
+        <pines-alert type="Secondary" color="Green" header="Alert Message Headline" class="mb-5">
+            This is the subtext for your alert message, providing important information or instructions.
+        </pines-alert>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@primaryAlertsCode"></code-highlight>
+    </slot>
+</pines-tabs>

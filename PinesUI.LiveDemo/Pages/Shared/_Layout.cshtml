@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.tailwind.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PinesUI.LiveDemo.styles.css" asp-append-version="true" />
+    <link href="~/css/atom-one-dark.css" rel="stylesheet" />
     <pines-css />
 </head>
 <body class="bg-white antialiased">
@@ -34,7 +35,13 @@
                 <pines-sidebar-link asp-page="/Index">Home</pines-sidebar-link>
             </pines-sidebar-section>
             <pines-sidebar-section section-name="Elements">
-                <pines-sidebar-link asp-page="/Index">Home</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Alerts">Alerts</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Cards">Cards</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Modal">Modal</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Marquee">Marquee</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/ImageGallery">Image Gallery</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/TextAnimation">Text Animation</pines-sidebar-link>
+                <pines-sidebar-link asp-page="/Components/Tabs">Tabs</pines-sidebar-link>
             </pines-sidebar-section>
         </pines-sidebar>
 
@@ -45,6 +52,7 @@
     </div>
 
     @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <pines-scripts />
     <render-static-scripts />
 </body>
