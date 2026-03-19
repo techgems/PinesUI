@@ -29,3 +29,33 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Documentation heading styles */
+main h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #171717;
+  margin-bottom: 0.5rem;
+}
+
+main h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #262626;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+main h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #404040;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}

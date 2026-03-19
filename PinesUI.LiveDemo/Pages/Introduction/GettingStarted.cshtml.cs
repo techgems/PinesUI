@@ -5,8 +5,9 @@ namespace PinesUI.LiveDemo.Pages
 {
     public class GettingStartedModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            return RedirectToPage("/Index");
         }
     }
 }

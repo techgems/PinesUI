@@ -6,7 +6,9 @@
       "Bash(dotnet build TechGems.PinesUI.csproj)",
       "Bash(node -e \":*)",
       "Bash(ls \"C:\\\\Users\\\\Carlos\\\\Desktop\\\\Professional Projects\\\\pines-ui\\\\PinesUI.LiveDemo\\\\Pages\\\\Components/\"*.cshtml)",
-      "Bash(dotnet build:*)"
+      "Bash(dotnet build:*)",
+      "Bash(grep -E \"\\\\.cshtml$\")",
+      "Bash(ls \"C:/Users/Carlos/Desktop/Professional Projects/pines-ui/bin/Debug/\"*.nupkg)"
     ]
   }
 }

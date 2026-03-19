@@ -1,0 +1,100 @@
+@page
+@using System.Text
+@using TechGems.PinesUI.Views.Components.PinesTabs
+@model PinesUI.LiveDemo.Pages.Introduction.InstallationModel
+
+@{
+    ViewData["Title"] = "Installation";
+
+    var tabConfig = new Dictionary<string, PinesTabConfigItem>()
+    {
+        { "Preview", new PinesTabConfigItem { TabName = "Preview", Order = 1 } },
+        { "Code", new PinesTabConfigItem { TabName = "Code", Order = 2 } },
+    };
+
+    var nugetInstallCode = "dotnet add package TechGems.PinesUI --version 1.0.0";
+
+    StringBuilder codeCreator = new StringBuilder();
+    codeCreator.AppendLine(@"// Program.cs");
+    codeCreator.AppendLine(@"builder.Services.AddStaticComponents();");
+    var programCsCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    codeCreator.AppendLine(@"// _ViewImports.cshtml");
+    codeCreator.AppendLine(@"@addTagHelper *, TechGems.PinesUI");
+    codeCreator.AppendLine(@"@addTagHelper *, TechGems.StaticComponents");
+    var viewImportsCode = codeCreator.ToString();
+    codeCreator.Clear();
+
+    codeCreator.AppendLine(@"<!DOCTYPE html>");
+    codeCreator.AppendLine(@"<html lang=""en"">");
+    codeCreator.AppendLine(@"<head>");
+    codeCreator.AppendLine(@"    <meta charset=""utf-8"" />");
+    codeCreator.AppendLine(@"    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"" />");
+    codeCreator.AppendLine(@"    <title>My App</title>");
+    codeCreator.AppendLine(@"    <pines-css />");
+    codeCreator.AppendLine(@"</head>");
+    codeCreator.AppendLine(@"<body>");
+    codeCreator.AppendLine(@"    @RenderBody()");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"    <pines-scripts />");
+    codeCreator.AppendLine(@"    <render-static-scripts />");
+    codeCreator.AppendLine(@"</body>");
+    codeCreator.AppendLine(@"</html>");
+    var layoutCode = codeCreator.ToString();
+    codeCreator.Clear();
+}
+
+<h2>Installation</h2>
+<p class="text-neutral-500 mb-5">
+    Follow the steps below to add PinesUI to your ASP.NET Core project.
+</p>
+
+<h3>1. Install the NuGet Package</h3>
+<p class="text-neutral-500 mb-3">
+    Add the package to your project using the .NET CLI:
+</p>
+<div class="mb-8">
+    <code-highlight lang="bash" code="@nugetInstallCode"></code-highlight>
+</div>
+
+<h3>2. Register Static Components</h3>
+<p class="text-neutral-500 mb-3">
+    In your <code class="text-sm bg-neutral-100 px-1.5 py-0.5 rounded">Program.cs</code>, register the Static Components services:
+</p>
+<div class="mb-8">
+    <code-highlight lang="csharp" code="@programCsCode"></code-highlight>
+</div>
+
+<h3>3. Add Tag Helpers</h3>
+<p class="text-neutral-500 mb-3">
+    In your <code class="text-sm bg-neutral-100 px-1.5 py-0.5 rounded">_ViewImports.cshtml</code>, register the tag helpers for both PinesUI and Static Components:
+</p>
+<div class="mb-8">
+    <code-highlight lang="csharp" code="@viewImportsCode"></code-highlight>
+</div>
+
+<h3>4. Set Up Your Layout</h3>
+<p class="text-neutral-500 mb-3">
+    Add the required tags to your <code class="text-sm bg-neutral-100 px-1.5 py-0.5 rounded">_Layout.cshtml</code>:
+</p>
+<div class="mb-5">
+    <code-highlight lang="html" code="@layoutCode"></code-highlight>
+</div>
+
+<div class="p-4 border border-blue-200 bg-blue-50 rounded-lg mb-8">
+    <h4 class="font-semibold text-blue-800 mb-1">What these tags do</h4>
+    <ul class="text-sm text-blue-700 list-disc pl-5 space-y-1">
+        <li><code class="bg-blue-100 px-1 rounded">&lt;pines-css /&gt;</code> — Renders the TailwindCSS-based library stylesheet.</li>
+        <li><code class="bg-blue-100 px-1 rounded">&lt;pines-scripts /&gt;</code> — Loads AlpineJS (core + focus plugin) and GSAP for animations.</li>
+        <li><code class="bg-blue-100 px-1 rounded">&lt;render-static-scripts /&gt;</code> — Renders any component-level scripts registered by individual components.</li>
+    </ul>
+</div>
+
+<h3>5. Start Using Components</h3>
+<p class="text-neutral-500 mb-3">
+    You're all set! Start using PinesUI components in any Razor page or view:
+</p>
+<div class="mb-8">
+    <code-highlight lang="html" code="@("<pines-alert type=\"Primary\" color=\"Blue\" header=\"Hello PinesUI!\">\n    Your setup is complete.\n</pines-alert>")"></code-highlight>
+</div>

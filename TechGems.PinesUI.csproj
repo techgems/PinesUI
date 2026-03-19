@@ -5,6 +5,15 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<PackageId>TechGems.PinesUI</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>TechGems</Authors>
+		<Description>An ASP.NET Core component library built on Pines UI, using AlpineJS, TailwindCSS, and Static Components.</Description>
+		<PackageTags>aspnetcore;components;pinesui;alpinejs;tailwindcss;razor</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 
@@ -34,6 +43,10 @@
 
 	<ItemGroup>
 		<Folder Include="wwwroot\js\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<Target Name="TailwindBuild" AfterTargets="AfterBuild">
