@@ -1,0 +1,50 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.DropdownMenuModel
+
+@{
+    ViewData["Title"] = "Dropdown Menu Spec";
+}
+
+<h2>Dropdown Menu</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-dropdown-menu&gt;</code> component renders a dropdown menu with a header, profile image, and a list of options. Use <code class="code-cell">&lt;dropdown-menu-option&gt;</code> for menu items and <code>&lt;dropdown-separator&gt;</code> for visual dividers.</p>
+
+<h3 class="mt-8 mb-3">&lt;pines-dropdown-menu&gt; Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">header</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Menu header text.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">user-name</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Display name shown in the header.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">image-url</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Profile image URL.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">&lt;dropdown-menu-option&gt; Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">link</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>The URL for the option.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">&lt;dropdown-separator&gt;</h3>
+<p class="text-neutral-500 mb-3">No configurable parameters. Renders a visual divider between menu options.</p>

@@ -1,0 +1,28 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.BannerModel
+
+@{
+    ViewData["Title"] = "Banner Spec";
+}
+
+<h2>Banner</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-banner&gt;</code> component displays a prominent banner with a headline and body text.</p>
+
+<h3 class="mt-8 mb-3">Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">head</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>The banner headline.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">body</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>The banner body text.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

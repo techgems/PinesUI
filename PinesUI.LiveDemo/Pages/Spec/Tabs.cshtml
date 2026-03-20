@@ -1,0 +1,50 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.TabsModel
+
+@{
+    ViewData["Title"] = "Tabs Spec";
+}
+
+<h2>Tabs</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-tabs&gt;</code> component renders a tabbed interface. Each key in tab-config corresponds to a named slot for tab content.</p>
+
+<h3 class="mt-8 mb-3">Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Default</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">tab-config</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">Dictionary&lt;string, PinesTabConfigItem&gt;</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">new Dictionary&lt;&gt;()</code></pines-table-cell>
+        <pines-table-cell>Tab definitions mapping slot names to config.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">""</code></pines-table-cell>
+        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">PinesTabConfigItem Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Property</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">TabName</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Display name shown in the tab header.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Order</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
+        <pines-table-cell>Sort order for tab positioning.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

@@ -1,0 +1,45 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.TextAnimationModel
+
+@{
+    ViewData["Title"] = "Text Animation Spec";
+}
+
+<h2>Text Animation</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-text-animation&gt;</code> component applies an entrance animation to its child text content.</p>
+
+<h3 class="mt-8 mb-3">Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Default</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">animation-type</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">PinesTextAnimationTypeEnum</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">FadeIn</code></pines-table-cell>
+        <pines-table-cell>The entrance animation style.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">PinesTextAnimationTypeEnum Values</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Value</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Scale</code></pines-table-cell>
+        <pines-table-cell>Scale entrance animation.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">SlideUp</code></pines-table-cell>
+        <pines-table-cell>Slide up entrance animation.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">FadeIn</code></pines-table-cell>
+        <pines-table-cell>Fade in entrance animation.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

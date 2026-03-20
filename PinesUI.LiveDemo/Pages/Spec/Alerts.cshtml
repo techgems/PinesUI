@@ -1,0 +1,82 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.AlertsModel
+
+@{
+    ViewData["Title"] = "Alert Spec";
+}
+
+<h2>Alert</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-alert&gt;</code> component displays contextual feedback messages with configurable style, color, and header text. Child content is used as the alert body text.</p>
+
+<h3 class="mt-8 mb-3">Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">type</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">PinesAlertTypeEnum</code></pines-table-cell>
+        <pines-table-cell>The style variant of the alert.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">color</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">PinesAlertColorEnum</code></pines-table-cell>
+        <pines-table-cell>The color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">header</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>The alert headline text.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">PinesAlertTypeEnum Values</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Value</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Primary</code></pines-table-cell>
+        <pines-table-cell>Primary style variant.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Secondary</code></pines-table-cell>
+        <pines-table-cell>Secondary style variant.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Neutral</code></pines-table-cell>
+        <pines-table-cell>Neutral style variant.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">PinesAlertColorEnum Values</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Value</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Blue</code></pines-table-cell>
+        <pines-table-cell>Blue color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Red</code></pines-table-cell>
+        <pines-table-cell>Red color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Green</code></pines-table-cell>
+        <pines-table-cell>Green color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Yellow</code></pines-table-cell>
+        <pines-table-cell>Yellow color scheme.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

@@ -1,0 +1,83 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.ButtonsModel
+
+@{
+    ViewData["Title"] = "Buttons Spec";
+}
+
+<h2>Buttons</h2>
+<p class="text-neutral-500 mb-5">The <code class ="code-cell">&lt;pines-button&gt;</code> component renders a styled button with configurable type and color. The <code>&lt;pines-shadow-button&gt;</code> renders a button with a shadow style. Child content is used as the button label text.</p>
+
+<h3 class="mt-8 mb-3">&lt;pines-button&gt; Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">type</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">PinesButtonTypeEnum</code></pines-table-cell>
+        <pines-table-cell>The button style variant.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">color</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">PinesButtonColorEnum</code></pines-table-cell>
+        <pines-table-cell>The color scheme.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">&lt;pines-shadow-button&gt;</h3>
+<p class="text-neutral-500 mb-3">No configurable parameters. Child content is used as the button label.</p>
+
+<h3 class="mt-8 mb-3">PinesButtonTypeEnum Values</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Value</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Primary</code></pines-table-cell>
+        <pines-table-cell>Primary style variant.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Secondary</code></pines-table-cell>
+        <pines-table-cell>Secondary style variant.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Outlined</code></pines-table-cell>
+        <pines-table-cell>Outlined style variant.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">PinesButtonColorEnum Values</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Value</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Neutral</code></pines-table-cell>
+        <pines-table-cell>Neutral color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Black</code></pines-table-cell>
+        <pines-table-cell>Black color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Blue</code></pines-table-cell>
+        <pines-table-cell>Blue color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Red</code></pines-table-cell>
+        <pines-table-cell>Red color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Green</code></pines-table-cell>
+        <pines-table-cell>Green color scheme.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Yellow</code></pines-table-cell>
+        <pines-table-cell>Yellow color scheme.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

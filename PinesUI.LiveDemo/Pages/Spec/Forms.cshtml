@@ -1,0 +1,143 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.FormsModel
+
+@{
+    ViewData["Title"] = "Forms Spec";
+}
+
+<h2>Forms</h2>
+<p class="text-neutral-500 mb-5">Form components for building interactive forms including text inputs, toggle switches, select dropdowns, and date pickers.</p>
+
+<h3 class="mt-8 mb-3">&lt;pines-input&gt; Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
+        <pines-table-cell>Model binding expression.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">show-label</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell>Whether to display the field label.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">disabled</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell>Whether the input is disabled.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">&lt;pines-switch&gt; Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">label</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Label text displayed beside the switch.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
+        <pines-table-cell>Model binding expression.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">switch-on</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell>Initial toggle state.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">&lt;pines-select&gt; Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Default</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">items</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">List&lt;PinesSelectItem&gt;</code></pines-table-cell>
+        <pines-table-cell>new List&lt;&gt;()</pines-table-cell>
+        <pines-table-cell>The selectable options.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">placeholder</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>"Select Item"</pines-table-cell>
+        <pines-table-cell>Placeholder text.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
+        <pines-table-cell>N/A</pines-table-cell>
+        <pines-table-cell>Model binding expression.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">PinesSelectItem Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Property</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Title</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Display text.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Value</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Form value.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Disabled</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell>Whether the option is disabled.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">&lt;pines-date-picker&gt; Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Default</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">date-format</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>"M d, Y"</pines-table-cell>
+        <pines-table-cell>Date display format string.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">label</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>"Select Date"</pines-table-cell>
+        <pines-table-cell>Label text.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">placeholder</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>"Select date"</pines-table-cell>
+        <pines-table-cell>Placeholder text.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
+        <pines-table-cell>N/A</pines-table-cell>
+        <pines-table-cell>Model binding expression.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

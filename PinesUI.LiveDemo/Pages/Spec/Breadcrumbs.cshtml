@@ -1,0 +1,46 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.BreadcrumbsModel
+
+@{
+    ViewData["Title"] = "Breadcrumbs Spec";
+}
+
+<h2>Breadcrumbs</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-breadcrumb&gt;</code> component is a container for breadcrumb navigation items. Each <code class="code-cell">&lt;pines-breadcrumb-item&gt;</code> represents a navigation step. Child content is used as the breadcrumb label text.</p>
+
+<h3 class="mt-8 mb-3">&lt;pines-breadcrumb&gt;</h3>
+<p class="text-neutral-500 mb-3">Container element. No configurable parameters.</p>
+
+<h3 class="mt-8 mb-3">&lt;pines-breadcrumb-item&gt; Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">is-first</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell>Whether this is the first item (renders home icon).</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">has-next</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell>Whether a separator is shown after this item.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">asp-page</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
+        <pines-table-cell>The Razor page route.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">asp-controller</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
+        <pines-table-cell>MVC controller name.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">asp-action</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
+        <pines-table-cell>MVC action name.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

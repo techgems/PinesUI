@@ -1,0 +1,96 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.TableModel
+
+@{
+    ViewData["Title"] = "Table Spec";
+}
+
+<h2>Table</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-table&gt;</code> component renders data in a tabular layout. It supports both a data-driven mode (via column-config and data properties) and a child-content mode (using <code>&lt;pines-table-header&gt;</code>, <code>&lt;pines-table-row&gt;</code>, and <code>&lt;pines-table-cell&gt;</code> sub-components).</p>
+
+<h3 class="mt-8 mb-3">pines-table Properties (Data-Driven Mode)</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Default</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">table-id</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
+        <pines-table-cell>N/A</pines-table-cell>
+        <pines-table-cell>Unique identifier for the table element.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">column-config</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">List&lt;(string Name, string DisplayName)&gt;</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">new List&lt;&gt;()</code></pines-table-cell>
+        <pines-table-cell>Column definitions.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">data</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">List&lt;object&gt;</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">new List&lt;&gt;()</code></pines-table-cell>
+        <pines-table-cell>Row data objects.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">display-action-col</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">false</code></pines-table-cell>
+        <pines-table-cell>Whether to show an action column.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">pines-table (Child-Content Mode)</h3>
+<p class="text-neutral-500 mb-5">When column-config and data are not provided, UsesChildContent becomes true and the table renders child components directly.</p>
+
+<h3 class="mt-8 mb-3">pines-table-header Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
+        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">pines-table-row Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
+        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">pines-table-cell Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Default</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
+        <pines-table-cell>N/A</pines-table-cell>
+        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">is-header</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell>false</pines-table-cell>
+        <pines-table-cell>If true, renders as th instead of td.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

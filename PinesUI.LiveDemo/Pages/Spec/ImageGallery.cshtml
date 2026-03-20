@@ -1,0 +1,44 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.ImageGalleryModel
+
+@{
+    ViewData["Title"] = "Image Gallery Spec";
+}
+
+<h2>Image Gallery</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-image-gallery&gt;</code> component displays a collection of images in a responsive gallery layout.</p>
+
+<h3 class="mt-8 mb-3">Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Default</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">image-list</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">List&lt;GalleryItem&gt;</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">new List&lt;&gt;()</code></pines-table-cell>
+        <pines-table-cell>The collection of gallery images.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">GalleryItem Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Property</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">ImageUrl</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>The image source URL. (JsonProperty: "photo")</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">ImageAlt</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Alt text for the image. (JsonProperty: "alt")</pines-table-cell>
+    </pines-table-row>
+</pines-table>

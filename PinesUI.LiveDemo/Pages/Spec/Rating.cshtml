@@ -1,0 +1,65 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.RatingModel
+
+@{
+    ViewData["Title"] = "Rating Spec";
+}
+
+<h2>Rating</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-rating&gt;</code> component provides an interactive star or heart rating input with configurable max value and initial state.</p>
+
+<h3 class="mt-8 mb-3">Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Default</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">max-stars</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">5</code></pines-table-cell>
+        <pines-table-cell>Maximum number of rating icons.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">initial-value</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">0</code></pines-table-cell>
+        <pines-table-cell>Initial rating value.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">disabled</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">false</code></pines-table-cell>
+        <pines-table-cell>Whether the rating is read-only.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">rating-type</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">PinesRatingTypeEnum</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">Star</code></pines-table-cell>
+        <pines-table-cell>The icon type to use.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
+        <pines-table-cell>N/A</pines-table-cell>
+        <pines-table-cell>Model binding expression.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">PinesRatingTypeEnum Values</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Value</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Star</code></pines-table-cell>
+        <pines-table-cell>Star icon rating.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">Heart</code></pines-table-cell>
+        <pines-table-cell>Heart icon rating.</pines-table-cell>
+    </pines-table-row>
+</pines-table>

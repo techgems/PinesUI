@@ -1,0 +1,45 @@
+@page
+@model PinesUI.LiveDemo.Pages.Spec.CardsModel
+
+@{
+    ViewData["Title"] = "Cards Spec";
+}
+
+<h2>Cards</h2>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-image-card&gt;</code> component displays a card with an image, title, and custom body content via the <code class="code-cell">CardContent_Slot</code> named slot.</p>
+
+<h3 class="mt-8 mb-3">Properties</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Attribute</pines-table-cell>
+        <pines-table-cell>Type</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">image-url</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>URL for the card image.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">title</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>The card title text.</pines-table-cell>
+    </pines-table-row>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
+        <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
+        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
+
+<h3 class="mt-8 mb-3">Named Slots</h3>
+<pines-table>
+    <pines-table-header>
+        <pines-table-cell>Slot Name</pines-table-cell>
+        <pines-table-cell>Description</pines-table-cell>
+    </pines-table-header>
+    <pines-table-row>
+        <pines-table-cell><code class="code-cell">CardContent_Slot</code></pines-table-cell>
+        <pines-table-cell>Custom content rendered as the card body.</pines-table-cell>
+    </pines-table-row>
+</pines-table>
