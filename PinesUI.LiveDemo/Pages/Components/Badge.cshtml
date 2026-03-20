@@ -48,6 +48,8 @@
 
     var outlinedBadgesCode = codeCreator.ToString();
     codeCreator.Clear();
+
+
 }
 
 <h2>Badge</h2>
@@ -106,3 +108,25 @@
         <code-highlight lang="html" code="@outlinedBadgesCode"></code-highlight>
     </slot>
 </pines-tabs>
+
+<h3>Parameters</h3>
+<pines-table table-id="badge-params">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Attribute</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>type</pines-table-cell>
+            <pines-table-cell>BadgeType: Primary | Secondary | Outlined</pines-table-cell>
+            <pines-table-cell>The badge style variant.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>color</pines-table-cell>
+            <pines-table-cell>BadgeColor: Neutral | Blue | Red | Yellow | Purple | Green</pines-table-cell>
+            <pines-table-cell>The badge color.</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>
+<p class="text-neutral-500 text-sm mt-2 mb-8">This uses child content as a primary form of content display.</p>

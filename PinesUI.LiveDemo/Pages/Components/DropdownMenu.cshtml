@@ -21,6 +21,7 @@
     codeCreator.AppendLine(@"</pines-dropdown-menu>");
     var dropdownMenuCode = codeCreator.ToString();
     codeCreator.Clear();
+
 }
 
 <h2>Dropdown Menu</h2>
@@ -40,3 +41,56 @@
         <code-highlight lang="html" code="@dropdownMenuCode"></code-highlight>
     </slot>
 </pines-tabs>
+
+<h3>Parameters — <code>&lt;pines-dropdown-menu&gt;</code></h3>
+<pines-table table-id="dropdown-params">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Attribute</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Default</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>header</pines-table-cell>
+            <pines-table-cell>string</pines-table-cell>
+            <pines-table-cell>N/A</pines-table-cell>
+            <pines-table-cell>The menu header text.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>user-name</pines-table-cell>
+            <pines-table-cell>string</pines-table-cell>
+            <pines-table-cell>N/A</pines-table-cell>
+            <pines-table-cell>Display name shown in the header.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>image-url</pines-table-cell>
+            <pines-table-cell>string</pines-table-cell>
+            <pines-table-cell>N/A</pines-table-cell>
+            <pines-table-cell>Profile image URL.</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>
+<p class="text-neutral-500 text-sm mt-2 mb-8">Accepts <code>&lt;dropdown-menu-option&gt;</code> and <code>&lt;dropdown-separator&gt;</code> children.</p>
+
+<h3>Parameters — <code>&lt;dropdown-menu-option&gt;</code></h3>
+<pines-table table-id="dropdown-option-params">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Attribute</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Default</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>link</pines-table-cell>
+            <pines-table-cell>string</pines-table-cell>
+            <pines-table-cell>N/A</pines-table-cell>
+            <pines-table-cell>The navigation URL for this option.</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>
+<p class="text-neutral-500 text-sm mt-2 mb-8">This component also accepts child content between its opening and closing tags.</p>
+
+<h3>Parameters — <code>&lt;dropdown-separator&gt;</code></h3>
+<p class="text-neutral-500 text-sm mt-2 mb-8">No parameters. Renders a visual divider between menu options.</p>

@@ -43,6 +43,7 @@
         { "TabTwo", new PinesTabConfigItem { TabName = "February", Order = 2 } },
         { "TabThree", new PinesTabConfigItem { TabName = "March", Order = 3 } },
     };
+
 }
 
 <h2>Tabs</h2>
@@ -68,3 +69,51 @@
         <code-highlight lang="html" code="@tabsCode"></code-highlight>
     </slot>
 </pines-tabs>
+
+<h3>Parameters</h3>
+<pines-table table-id="tabs-params">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Attribute</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Default</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>tab-config</pines-table-cell>
+            <pines-table-cell>Dictionary&lt;string, PinesTabConfigItem&gt;</pines-table-cell>
+            <pines-table-cell>new Dictionary&lt;&gt;()</pines-table-cell>
+            <pines-table-cell>Tab configuration (key = slot name, value = config).</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>class</pines-table-cell>
+            <pines-table-cell>string</pines-table-cell>
+            <pines-table-cell>""</pines-table-cell>
+            <pines-table-cell>Additional CSS classes.</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>
+
+<h4>PinesTabConfigItem Properties</h4>
+
+<pines-table table-id="tabs-config-item-props">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Property</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>TabName</pines-table-cell>
+            <pines-table-cell>string</pines-table-cell>
+            <pines-table-cell>Display label for the tab.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>Order</pines-table-cell>
+            <pines-table-cell>int</pines-table-cell>
+            <pines-table-cell>Sort order for tab positioning.</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>
+
+<p class="text-neutral-500 text-sm mt-2 mb-8">This component accepts named slot children: <code>&lt;slot name="SlotKey"&gt;</code> matching the dictionary keys.</p>

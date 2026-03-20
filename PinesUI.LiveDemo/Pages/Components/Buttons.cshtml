@@ -54,6 +54,8 @@
     codeCreator.AppendLine(@"<pines-shadow-button>Shadow Button</pines-shadow-button>");
     var shadowButtonCode = codeCreator.ToString();
     codeCreator.Clear();
+
+
 }
 
 <h2>Buttons</h2>
@@ -110,6 +112,28 @@
     </slot>
 </pines-tabs>
 
+<h3>Parameters — <code>&lt;pines-button&gt;</code></h3>
+<pines-table table-id="button-params">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Attribute</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>type</pines-table-cell>
+            <pines-table-cell>PinesButtonTypeEnum: Primary | Secondary | Outlined</pines-table-cell>
+            <pines-table-cell>Button style variant.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>color</pines-table-cell>
+            <pines-table-cell>PinesButtonColorEnum: Neutral | Black | Blue | Red | Green | Yellow</pines-table-cell>
+            <pines-table-cell>Button color.</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>
+<p class="text-neutral-500 text-sm mt-2 mb-8">Button text is set by using child content.</p>
+
 <h3>Shadow Button</h3>
 <pines-tabs tab-config="tabConfig">
     <slot name="Preview">
@@ -119,3 +143,10 @@
         <code-highlight lang="html" code="@shadowButtonCode"></code-highlight>
     </slot>
 </pines-tabs>
+
+<h3>Parameters — <code>&lt;pines-shadow-button&gt;</code></h3>
+<p class="text-neutral-500 text-sm mb-8">No parameters. Button text is set by using child content.</p>
+
+
+
+

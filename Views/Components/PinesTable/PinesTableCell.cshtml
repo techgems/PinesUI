@@ -1,0 +1,15 @@
+@using TechGems.PinesUI.Views.Components.PinesTable
+@model PinesTableCell
+
+@if (Model.IsHeader)
+{
+    <th class="px-5 py-3 text-xs font-medium text-left uppercase @(Model.CssClass ?? "")">
+        @Model.ChildContent
+    </th>
+}
+else
+{
+    <td class="px-5 py-4 text-sm whitespace-nowrap @(Model.CssClass ?? "")">
+        @Model.ChildContent
+    </td>
+}

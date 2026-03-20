@@ -33,6 +33,7 @@
 
     var fastTypingCode = codeCreator.ToString();
     codeCreator.Clear();
+
 }
 
 <h2>Typing Effect</h2>
@@ -48,6 +49,48 @@
         <code-highlight lang="html" code="@defaultSpeedCode"></code-highlight>
     </slot>
 </pines-tabs>
+
+<h3>Parameters</h3>
+<pines-table table-id="typing-effect-params">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Attribute</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Default</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>text-array</pines-table-cell>
+            <pines-table-cell>List&lt;string&gt;</pines-table-cell>
+            <pines-table-cell>new List&lt;&gt;()</pines-table-cell>
+            <pines-table-cell>Strings to cycle through.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>type-speed</pines-table-cell>
+            <pines-table-cell>int</pines-table-cell>
+            <pines-table-cell>110</pines-table-cell>
+            <pines-table-cell>Typing speed in milliseconds per character.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>cursor-speed</pines-table-cell>
+            <pines-table-cell>int</pines-table-cell>
+            <pines-table-cell>550</pines-table-cell>
+            <pines-table-cell>Cursor blink interval in milliseconds.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>pause-end</pines-table-cell>
+            <pines-table-cell>int</pines-table-cell>
+            <pines-table-cell>1500</pines-table-cell>
+            <pines-table-cell>Pause duration after finishing a string (ms).</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>pause-start</pines-table-cell>
+            <pines-table-cell>int</pines-table-cell>
+            <pines-table-cell>20</pines-table-cell>
+            <pines-table-cell>Pause duration before starting to type (ms).</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>
 
 <h3>Fast Typing</h3>
 

@@ -27,6 +27,7 @@
 
     var disabledRatingCode = codeCreator.ToString();
     codeCreator.Clear();
+
 }
 
 <h2>Rating</h2>
@@ -64,3 +65,45 @@
         <code-highlight lang="html" code="@disabledRatingCode"></code-highlight>
     </slot>
 </pines-tabs>
+
+<h3>Parameters</h3>
+<pines-table table-id="rating-params">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Attribute</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Default</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>max-stars</pines-table-cell>
+            <pines-table-cell>int</pines-table-cell>
+            <pines-table-cell>5</pines-table-cell>
+            <pines-table-cell>Maximum number of rating icons.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>initial-value</pines-table-cell>
+            <pines-table-cell>int</pines-table-cell>
+            <pines-table-cell>0</pines-table-cell>
+            <pines-table-cell>Pre-selected rating value.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>disabled</pines-table-cell>
+            <pines-table-cell>bool</pines-table-cell>
+            <pines-table-cell>false</pines-table-cell>
+            <pines-table-cell>Whether the rating is read-only.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>rating-type</pines-table-cell>
+            <pines-table-cell>PinesRatingTypeEnum: Star | Heart</pines-table-cell>
+            <pines-table-cell>Star</pines-table-cell>
+            <pines-table-cell>The icon type.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>asp-for</pines-table-cell>
+            <pines-table-cell>ModelExpression?</pines-table-cell>
+            <pines-table-cell>N/A</pines-table-cell>
+            <pines-table-cell>Model binding expression.</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>

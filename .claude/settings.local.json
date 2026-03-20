@@ -8,7 +8,11 @@
       "Bash(ls \"C:\\\\Users\\\\Carlos\\\\Desktop\\\\Professional Projects\\\\pines-ui\\\\PinesUI.LiveDemo\\\\Pages\\\\Components/\"*.cshtml)",
       "Bash(dotnet build:*)",
       "Bash(grep -E \"\\\\.cshtml$\")",
-      "Bash(ls \"C:/Users/Carlos/Desktop/Professional Projects/pines-ui/bin/Debug/\"*.nupkg)"
+      "Bash(ls \"C:/Users/Carlos/Desktop/Professional Projects/pines-ui/bin/Debug/\"*.nupkg)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/Carlos/Desktop/Professional Projects/pines-ui/PinesUI.LiveDemo/Pages/Components/**)",
+      "Bash(done)"
     ]
   }
 }

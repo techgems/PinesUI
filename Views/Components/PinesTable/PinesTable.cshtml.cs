@@ -28,6 +28,8 @@ public class PinesTable : StaticComponent
     [HtmlAttributeName("display-action-col")]
     public bool RenderActionColumn { get; set; }
 
+    public bool UsesChildContent => ColumnList.Count == 0 && Data.Count == 0;
+
     public string GetDataRowHtml(int index)
     {
         var sb = new StringBuilder();

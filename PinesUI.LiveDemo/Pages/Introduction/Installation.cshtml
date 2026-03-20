@@ -15,10 +15,6 @@
     var nugetInstallCode = "dotnet add package TechGems.PinesUI --version 1.0.0";
 
     StringBuilder codeCreator = new StringBuilder();
-    codeCreator.AppendLine(@"// Program.cs");
-    codeCreator.AppendLine(@"builder.Services.AddStaticComponents();");
-    var programCsCode = codeCreator.ToString();
-    codeCreator.Clear();
 
     codeCreator.AppendLine(@"// _ViewImports.cshtml");
     codeCreator.AppendLine(@"@addTagHelper *, TechGems.PinesUI");
@@ -58,15 +54,7 @@
     <code-highlight lang="bash" code="@nugetInstallCode"></code-highlight>
 </div>
 
-<h3>2. Register Static Components</h3>
-<p class="text-neutral-500 mb-3">
-    In your <code class="text-sm bg-neutral-100 px-1.5 py-0.5 rounded">Program.cs</code>, register the Static Components services:
-</p>
-<div class="mb-8">
-    <code-highlight lang="csharp" code="@programCsCode"></code-highlight>
-</div>
-
-<h3>3. Add Tag Helpers</h3>
+<h3>2. Add Tag Helpers</h3>
 <p class="text-neutral-500 mb-3">
     In your <code class="text-sm bg-neutral-100 px-1.5 py-0.5 rounded">_ViewImports.cshtml</code>, register the tag helpers for both PinesUI and Static Components:
 </p>
@@ -74,16 +62,16 @@
     <code-highlight lang="csharp" code="@viewImportsCode"></code-highlight>
 </div>
 
-<h3>4. Set Up Your Layout</h3>
+<h3>3. Set Up Your Layout</h3>
 <p class="text-neutral-500 mb-3">
     Add the required tags to your <code class="text-sm bg-neutral-100 px-1.5 py-0.5 rounded">_Layout.cshtml</code>:
 </p>
-<div class="mb-5">
+<div class="mb-2">
     <code-highlight lang="html" code="@layoutCode"></code-highlight>
 </div>
 
-<div class="p-4 border border-blue-200 bg-blue-50 rounded-lg mb-8">
-    <h4 class="font-semibold text-blue-800 mb-1">What these tags do</h4>
+<div class="px-4 pb-4 pt-1 border border-blue-200 bg-blue-50 rounded-lg mb-8">
+    <h4 class="font-semibold text-blue-800 my-1!">What these components do</h4>
     <ul class="text-sm text-blue-700 list-disc pl-5 space-y-1">
         <li><code class="bg-blue-100 px-1 rounded">&lt;pines-css /&gt;</code> — Renders the TailwindCSS-based library stylesheet.</li>
         <li><code class="bg-blue-100 px-1 rounded">&lt;pines-scripts /&gt;</code> — Loads AlpineJS (core + focus plugin) and GSAP for animations.</li>
@@ -91,7 +79,7 @@
     </ul>
 </div>
 
-<h3>5. Start Using Components</h3>
+<h3>4. Start Using Components</h3>
 <p class="text-neutral-500 mb-3">
     You're all set! Start using PinesUI components in any Razor page or view:
 </p>

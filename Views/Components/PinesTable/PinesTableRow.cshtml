@@ -1,0 +1,6 @@
+@using TechGems.PinesUI.Views.Components.PinesTable
+@model PinesTableRow
+
+<tr class="text-neutral-800 @(Model.CssClass ?? "")">
+    @Model.ChildContent
+</tr>

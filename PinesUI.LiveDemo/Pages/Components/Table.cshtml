@@ -47,6 +47,7 @@
 
     var tableCode = codeCreator.ToString();
     codeCreator.Clear();
+
 }
 
 <h2>Table</h2>
@@ -62,3 +63,39 @@
         <code-highlight lang="html" code="@tableCode"></code-highlight>
     </slot>
 </pines-tabs>
+
+<h3>Parameters</h3>
+<pines-table table-id="table-params">
+    <pines-table-header>
+        <pines-table-cell is-header="true">Attribute</pines-table-cell>
+        <pines-table-cell is-header="true">Type</pines-table-cell>
+        <pines-table-cell is-header="true">Default</pines-table-cell>
+        <pines-table-cell is-header="true">Description</pines-table-cell>
+    </pines-table-header>
+    <tbody class="divide-y divide-neutral-200">
+        <pines-table-row>
+            <pines-table-cell>table-id</pines-table-cell>
+            <pines-table-cell>string?</pines-table-cell>
+            <pines-table-cell>N/A</pines-table-cell>
+            <pines-table-cell>HTML id attribute for the table element.</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>column-config</pines-table-cell>
+            <pines-table-cell>List&lt;(string, string)&gt;</pines-table-cell>
+            <pines-table-cell>new List&lt;&gt;()</pines-table-cell>
+            <pines-table-cell>Column definitions (property name and display header).</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>data</pines-table-cell>
+            <pines-table-cell>List&lt;object&gt;</pines-table-cell>
+            <pines-table-cell>new List&lt;&gt;()</pines-table-cell>
+            <pines-table-cell>Row data objects (properties matched by column Name).</pines-table-cell>
+        </pines-table-row>
+        <pines-table-row>
+            <pines-table-cell>display-action-col</pines-table-cell>
+            <pines-table-cell>bool</pines-table-cell>
+            <pines-table-cell>false</pines-table-cell>
+            <pines-table-cell>Whether to render an action column.</pines-table-cell>
+        </pines-table-row>
+    </tbody>
+</pines-table>

@@ -6,35 +6,42 @@
         <div class="inline-block min-w-full">
             <div class="overflow-hidden">
                 <table>
-                    <thead>
-                        <tr class="text-neutral-500">
-                            @for (int i = 0; i < Model.ColumnList.Count; i++)
-                            {
-                                var textOrientation = "text-left";
-
-                                if (i == Model.ColumnList.Count - 1)
+                    @if (Model.UsesChildContent)
+                    {
+                        @Model.ChildContent
+                    }
+                    else
+                    {
+                        <thead>
+                            <tr class="text-neutral-500">
+                                @for (int i = 0; i < Model.ColumnList.Count; i++)
                                 {
-                                    textOrientation = "text-right";
-                                }
+                                    var textOrientation = "text-left";
 
-                                <th class="px-5 py-3 text-xs font-medium @textOrientation uppercase">
-                                    @Model.ColumnList[i].DisplayName
-                                </th>
-                            }
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-neutral-200">
-                        <tr class="text-neutral-800">
-                            @for (int i = 0; i < Model.Data.Count; i++)
-                            {
-                                @Html.Raw(Model.GetDataRowHtml(i))
-                            }
-                            @if(Model.RenderActionColumn)
-                            {
-                                @Model.RenderSlot("ActionCell")
-                            }
-                        </tr>
-                    </tbody>
+                                    if (Model.RenderActionColumn && i == Model.ColumnList.Count - 1)
+                                    {
+                                        textOrientation = "text-right";
+                                    }
+
+                                    <th class="px-5 py-3 text-xs font-medium @textOrientation uppercase">
+                                        @Model.ColumnList[i].DisplayName
+                                    </th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-neutral-200">
+                            <tr class="text-neutral-800">
+                                @for (int i = 0; i < Model.Data.Count; i++)
+                                {
+                                    @Html.Raw(Model.GetDataRowHtml(i))
+                                }
+                                @if(Model.RenderActionColumn)
+                                {
+                                    @Model.RenderSlot("ActionCell")
+                                }
+                            </tr>
+                        </tbody>
+                    }
                 </table>
             </div>
         </div>
