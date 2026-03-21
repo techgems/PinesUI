@@ -6,7 +6,7 @@
 }
 
 <h2>Quote</h2>
-<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-quote&gt;</code> component displays a styled blockquote with author attribution and optional profile image. Child content is used as the quote text.</p>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-quote&gt;</code> component renders a styled blockquote with attribution. Use it for customer testimonials, pull quotes in editorial content, or any scenario where a statement needs to be visually distinguished from surrounding text and credited to a named source.</p>
 
 <h3 class="mt-8 mb-3">Properties</h3>
 <pines-table>
@@ -18,21 +18,21 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">author</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>The quote author's name.</pines-table-cell>
+        <pines-table-cell>Full name of the person being quoted. Displayed as the primary attribution below the quote text — use the name as the reader would recognize it.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">author-title</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
-        <pines-table-cell>The author's title or role.</pines-table-cell>
+        <pines-table-cell>Role, title, or affiliation of the author. Displayed beneath the author name to provide context that lends credibility to the quote — for example, "CEO, Acme Corp" or "Lead Designer".</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">image-url</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
-        <pines-table-cell>URL for the author's profile image.</pines-table-cell>
+        <pines-table-cell>URL of the author's photo or avatar. When provided, an image is rendered alongside the attribution. Use a square or close-cropped portrait for best visual results.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">image-alt</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
-        <pines-table-cell>Alt text for the profile image.</pines-table-cell>
+        <pines-table-cell>Accessible alt text for the author's image. Provide a brief description such as the author's name for screen reader compatibility.</pines-table-cell>
     </pines-table-row>
 </pines-table>

@@ -6,7 +6,7 @@
 }
 
 <h2>Modal</h2>
-<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-modal&gt;</code> component displays a dialog overlay with a configurable title and trigger button. Child content is used as the modal body.</p>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-modal&gt;</code> component renders a dialog overlay triggered by a button. Use it to present confirmation prompts, detail views, forms, or any supplementary content that should appear in context without navigating away from the current page. The modal is dismissed by clicking outside it or by a close button inside the dialog.</p>
 
 <h3 class="mt-8 mb-3">Properties</h3>
 <pines-table>
@@ -20,12 +20,12 @@
         <pines-table-cell><code class="code-cell">title</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">""</code></pines-table-cell>
-        <pines-table-cell>The modal dialog title.</pines-table-cell>
+        <pines-table-cell>Heading displayed at the top of the modal dialog. Use a concise label that clearly states the modal's purpose — for example, "Confirm Deletion" or "Edit Profile".</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">button-text</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">"Open"</code></pines-table-cell>
-        <pines-table-cell>Text for the trigger button.</pines-table-cell>
+        <pines-table-cell>Label on the trigger button that opens the modal. Use an action-oriented phrase that previews the modal's purpose — for example, "View Details" or "Delete Account".</pines-table-cell>
     </pines-table-row>
 </pines-table>

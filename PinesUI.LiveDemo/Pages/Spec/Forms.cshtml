@@ -6,7 +6,7 @@
 }
 
 <h2>Forms</h2>
-<p class="text-neutral-500 mb-5">Form components for building interactive forms including text inputs, toggle switches, select dropdowns, and date pickers.</p>
+<p class="text-neutral-500 mb-5">PinesUI provides a collection of form input components for building data-entry interfaces. Each component integrates with ASP.NET Core model binding via the asp-for attribute, enabling automatic label generation, validation, and model state binding. Use these components to build consistent, accessible forms with minimal boilerplate.</p>
 
 <h3 class="mt-8 mb-3">&lt;pines-input&gt; Properties</h3>
 <pines-table>
@@ -18,17 +18,17 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
-        <pines-table-cell>Model binding expression.</pines-table-cell>
+        <pines-table-cell>Model binding expression used to connect the input to a property on the page model. Enables automatic name, id, and value binding, as well as validation message integration.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">show-label</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
-        <pines-table-cell>Whether to display the field label.</pines-table-cell>
+        <pines-table-cell>When true, renders a label above the input derived from the asp-for expression's display name. Disable when you are providing your own external label or when the input's context makes a label redundant.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">disabled</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
-        <pines-table-cell>Whether the input is disabled.</pines-table-cell>
+        <pines-table-cell>When true, renders the input in a read-only, non-interactive state. Use for fields that are contextually locked — such as auto-populated values or fields the current user does not have permission to edit.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -42,17 +42,17 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">label</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>Label text displayed beside the switch.</pines-table-cell>
+        <pines-table-cell>Text label displayed alongside the toggle switch. Use a short, action-oriented phrase that describes what enabling the switch does — for example, "Enable notifications" or "Dark mode".</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
-        <pines-table-cell>Model binding expression.</pines-table-cell>
+        <pines-table-cell>Model binding expression for the boolean toggle value. Connects the switch to a bool property on the page model so its state is submitted and validated with the form.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">switch-on</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
-        <pines-table-cell>Initial toggle state.</pines-table-cell>
+        <pines-table-cell>Sets the initial state of the toggle. Use true to pre-enable the switch for features that should be on by default, or false to require explicit opt-in.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -68,19 +68,19 @@
         <pines-table-cell><code class="code-cell">items</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">List&lt;PinesSelectItem&gt;</code></pines-table-cell>
         <pines-table-cell>new List&lt;&gt;()</pines-table-cell>
-        <pines-table-cell>The selectable options.</pines-table-cell>
+        <pines-table-cell>The list of options to render in the dropdown. Populate this from your page model, typically from a database query or a static list of valid choices.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">placeholder</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
         <pines-table-cell>"Select Item"</pines-table-cell>
-        <pines-table-cell>Placeholder text.</pines-table-cell>
+        <pines-table-cell>Text shown as the initially selected, non-value option. Use a short verb phrase like "Select a country" to guide the user toward making a selection.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
         <pines-table-cell>N/A</pines-table-cell>
-        <pines-table-cell>Model binding expression.</pines-table-cell>
+        <pines-table-cell>Model binding expression that connects the selected value to a property on the page model. Enables automatic name/id assignment and integrates with model validation.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -94,17 +94,17 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Title</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>Display text.</pines-table-cell>
+        <pines-table-cell>The visible label shown in the dropdown list for this option. Use a human-readable string that clearly represents the underlying value to the user.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Value</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>Form value.</pines-table-cell>
+        <pines-table-cell>The underlying value submitted with the form when this option is selected. Typically corresponds to an ID, enum member, or key in your data model.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Disabled</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
-        <pines-table-cell>Whether the option is disabled.</pines-table-cell>
+        <pines-table-cell>When true, the option is rendered in a non-selectable state within the dropdown. Use to indicate unavailable or restricted choices without removing them from the list entirely.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -120,24 +120,24 @@
         <pines-table-cell><code class="code-cell">date-format</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
         <pines-table-cell>"M d, Y"</pines-table-cell>
-        <pines-table-cell>Date display format string.</pines-table-cell>
+        <pines-table-cell>Format string used to display the selected date. Defaults to "M d, Y" (e.g., Jan 1, 2025). Adjust this to match the date display conventions expected by your users or required by your application.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">label</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
         <pines-table-cell>"Select Date"</pines-table-cell>
-        <pines-table-cell>Label text.</pines-table-cell>
+        <pines-table-cell>Text label rendered above the date picker field. Use a clear, descriptive label that communicates what date is being collected — for example, "Date of Birth" or "Appointment Date".</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">placeholder</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
         <pines-table-cell>"Select date"</pines-table-cell>
-        <pines-table-cell>Placeholder text.</pines-table-cell>
+        <pines-table-cell>Text shown inside the input before a date is selected. Use a hint such as "Select date" or a format example like "MM/DD/YYYY" to guide the user.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
         <pines-table-cell>N/A</pines-table-cell>
-        <pines-table-cell>Model binding expression.</pines-table-cell>
+        <pines-table-cell>Model binding expression connecting the selected date to a property on the page model. Enables automatic name/id assignment and form validation integration.</pines-table-cell>
     </pines-table-row>
 </pines-table>

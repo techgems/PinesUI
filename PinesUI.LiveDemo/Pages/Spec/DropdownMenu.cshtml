@@ -6,7 +6,7 @@
 }
 
 <h2>Dropdown Menu</h2>
-<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-dropdown-menu&gt;</code> component renders a dropdown menu with a header, profile image, and a list of options. Use <code class="code-cell">&lt;dropdown-menu-option&gt;</code> for menu items and <code>&lt;dropdown-separator&gt;</code> for visual dividers.</p>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-dropdown-menu&gt;</code> component renders a user profile dropdown, typically placed in a site header or navigation bar. It displays a user avatar, name, and a list of contextual menu options such as profile settings, account management, and logout. Each menu item is added as a <code class="code-cell">&lt;pines-dropdown-menu-option&gt;</code> child component.</p>
 
 <h3 class="mt-8 mb-3">&lt;pines-dropdown-menu&gt; Properties</h3>
 <pines-table>
@@ -18,17 +18,17 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">header</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>Menu header text.</pines-table-cell>
+        <pines-table-cell>Short text displayed at the top of the dropdown panel, above the user details. Use for section labels such as "My Account" to orient the user within the menu.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">user-name</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>Display name shown in the header.</pines-table-cell>
+        <pines-table-cell>The authenticated user's display name shown in the dropdown header. Use the user's full name or username to personalize the experience.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">image-url</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>Profile image URL.</pines-table-cell>
+        <pines-table-cell>URL of the user's avatar image displayed in the dropdown header. When provided, the image is shown as a circular thumbnail alongside the user's name.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -42,7 +42,7 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">link</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>The URL for the option.</pines-table-cell>
+        <pines-table-cell>URL or route that the menu item navigates to when clicked. Use relative paths for internal routes (such as /settings) or absolute URLs for external links.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 

@@ -6,7 +6,7 @@
 }
 
 <h2>Alert</h2>
-<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-alert&gt;</code> component displays contextual feedback messages with configurable style, color, and header text. Child content is used as the alert body text.</p>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-alert&gt;</code> component displays contextual feedback messages inline within a page layout. Use it to surface validation errors, success confirmations, informational notices, or cautionary warnings after user actions or during page load. Pair it with a color and style that matches the severity of the message.</p>
 
 <h3 class="mt-8 mb-3">Properties</h3>
 <pines-table>
@@ -18,22 +18,22 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">type</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">PinesAlertTypeEnum</code></pines-table-cell>
-        <pines-table-cell>The style variant of the alert.</pines-table-cell>
+        <pines-table-cell>Controls the visual weight of the alert. Choose a style that reflects how prominently the message should register.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">color</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">PinesAlertColorEnum</code></pines-table-cell>
-        <pines-table-cell>The color scheme.</pines-table-cell>
+        <pines-table-cell>Sets the color scheme of the alert. Choose the color that communicates the nature of the message — informational, success, warning, or danger.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+        <pines-table-cell>Additional CSS classes applied to the alert container. Use for layout adjustments such as margin or width constraints.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">header</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>The alert headline text.</pines-table-cell>
+        <pines-table-cell>Optional bold heading displayed above the body text. Use to provide a concise label for the alert, such as "Success" or "Action Required", before elaborating in the child content.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -45,15 +45,15 @@
     </pines-table-header>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Primary</code></pines-table-cell>
-        <pines-table-cell>Primary style variant.</pines-table-cell>
+        <pines-table-cell>Solid filled background. Best for prominent, high-priority messages the user must not miss — such as session expiry warnings or critical errors that block proceeding.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Secondary</code></pines-table-cell>
-        <pines-table-cell>Secondary style variant.</pines-table-cell>
+        <pines-table-cell>Lighter filled background. Suitable for secondary notices or supplementary information that is relevant but not urgent.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Neutral</code></pines-table-cell>
-        <pines-table-cell>Neutral style variant.</pines-table-cell>
+        <pines-table-cell>Minimal, low-contrast style. Ideal for passive informational messages that provide context without drawing strong attention.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -65,18 +65,18 @@
     </pines-table-header>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Blue</code></pines-table-cell>
-        <pines-table-cell>Blue color scheme.</pines-table-cell>
+        <pines-table-cell>Informational color. Use for neutral messages, tips, or status updates that do not require immediate action.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Red</code></pines-table-cell>
-        <pines-table-cell>Red color scheme.</pines-table-cell>
+        <pines-table-cell>Danger color. Use for errors, validation failures, or warnings about irreversible or destructive actions where the user needs to stop and take notice.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Green</code></pines-table-cell>
-        <pines-table-cell>Green color scheme.</pines-table-cell>
+        <pines-table-cell>Success color. Use to confirm that an operation completed successfully — such as a form submission, a save action, or a payment going through.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Yellow</code></pines-table-cell>
-        <pines-table-cell>Yellow color scheme.</pines-table-cell>
+        <pines-table-cell>Warning color. Use for cautionary messages that don't indicate failure but where the user should be aware before proceeding.</pines-table-cell>
     </pines-table-row>
 </pines-table>

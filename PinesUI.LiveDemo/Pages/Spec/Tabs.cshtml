@@ -6,7 +6,7 @@
 }
 
 <h2>Tabs</h2>
-<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-tabs&gt;</code> component renders a tabbed interface. Each key in tab-config corresponds to a named slot for tab content.</p>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-tabs&gt;</code> component renders a tabbed interface for organizing related content into switchable panels. Use it when a page or section has multiple logical views that share the same context — such as "Overview", "Details", and "History" for a record, or "Preview" and "Code" for an editor. Each tab's content is placed in a named slot matching the key defined in tab-config.</p>
 
 <h3 class="mt-8 mb-3">Properties</h3>
 <pines-table>
@@ -20,13 +20,13 @@
         <pines-table-cell><code class="code-cell">tab-config</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">Dictionary&lt;string, PinesTabConfigItem&gt;</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">new Dictionary&lt;&gt;()</code></pines-table-cell>
-        <pines-table-cell>Tab definitions mapping slot names to config.</pines-table-cell>
+        <pines-table-cell>A dictionary mapping slot name keys to tab configuration objects. Each entry defines one tab — the key determines which named slot provides the tab's content, while the value controls the display name and ordering.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">""</code></pines-table-cell>
-        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+        <pines-table-cell>Additional CSS classes applied to the tabs container. Use for width constraints, margin, or custom layout adjustments within the parent component.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -40,11 +40,11 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">TabName</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string</code></pines-table-cell>
-        <pines-table-cell>Display name shown in the tab header.</pines-table-cell>
+        <pines-table-cell>The label displayed in the clickable tab header. Use a short, descriptive noun or noun phrase that clearly identifies the content within — for example, "Overview", "Settings", or "Activity".</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Order</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
-        <pines-table-cell>Sort order for tab positioning.</pines-table-cell>
+        <pines-table-cell>Numeric value controlling the left-to-right display order of tabs. Lower numbers appear first. Use this to control tab sequence independently of dictionary insertion order.</pines-table-cell>
     </pines-table-row>
 </pines-table>

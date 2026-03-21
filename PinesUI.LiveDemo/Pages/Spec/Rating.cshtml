@@ -6,7 +6,7 @@
 }
 
 <h2>Rating</h2>
-<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-rating&gt;</code> component provides an interactive star or heart rating input with configurable max value and initial state.</p>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-rating&gt;</code> component provides an interactive star or heart rating input. Use it in forms to capture user satisfaction scores, product ratings, or any numeric preference expressed on a visual scale. It integrates with ASP.NET Core model binding via asp-for, and can also be used in a read-only display mode to show existing ratings.</p>
 
 <h3 class="mt-8 mb-3">Properties</h3>
 <pines-table>
@@ -20,31 +20,31 @@
         <pines-table-cell><code class="code-cell">max-stars</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">5</code></pines-table-cell>
-        <pines-table-cell>Maximum number of rating icons.</pines-table-cell>
+        <pines-table-cell>Total number of rating icons rendered. Defaults to 5. Increase for higher-resolution scales (e.g., 10) or decrease for simpler binary-style ratings.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">initial-value</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">0</code></pines-table-cell>
-        <pines-table-cell>Initial rating value.</pines-table-cell>
+        <pines-table-cell>Pre-selected rating shown when the component renders. Use this to display an existing rating from your data model, or leave at 0 to start with no selection.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">disabled</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">false</code></pines-table-cell>
-        <pines-table-cell>Whether the rating is read-only.</pines-table-cell>
+        <pines-table-cell>When true, the rating is rendered in a non-interactive, read-only state. Use to display a rating that the user should see but not change — such as an aggregate score or a submitted review.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">rating-type</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">PinesRatingTypeEnum</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">Star</code></pines-table-cell>
-        <pines-table-cell>The icon type to use.</pines-table-cell>
+        <pines-table-cell>Selects the icon used to represent each rating point. Choose the shape that best fits the tone of your UI.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">asp-for</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">ModelExpression?</code></pines-table-cell>
         <pines-table-cell>N/A</pines-table-cell>
-        <pines-table-cell>Model binding expression.</pines-table-cell>
+        <pines-table-cell>Model binding expression connecting the selected rating value to a property on the page model. Enables automatic form submission and validation integration.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -56,10 +56,10 @@
     </pines-table-header>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Star</code></pines-table-cell>
-        <pines-table-cell>Star icon rating.</pines-table-cell>
+        <pines-table-cell>Five-pointed star icon. The standard rating metaphor — use for product reviews, service quality ratings, or any context where star ratings are a recognized convention.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">Heart</code></pines-table-cell>
-        <pines-table-cell>Heart icon rating.</pines-table-cell>
+        <pines-table-cell>Heart icon. Use for likes, favorites, or any rating context where affection or preference is the primary sentiment being expressed.</pines-table-cell>
     </pines-table-row>
 </pines-table>

@@ -6,7 +6,7 @@
 }
 
 <h2>Table</h2>
-<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-table&gt;</code> component renders data in a tabular layout. It supports both a data-driven mode (via column-config and data properties) and a child-content mode (using <code>&lt;pines-table-header&gt;</code>, <code>&lt;pines-table-row&gt;</code>, and <code>&lt;pines-table-cell&gt;</code> sub-components).</p>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-table&gt;</code> component renders data in a tabular layout. It supports two modes: a data-driven mode where rows are generated automatically from a list of objects and a column configuration, and a child-content mode where <code class="code-cell">&lt;pines-table-header&gt;</code>, <code class="code-cell">&lt;pines-table-row&gt;</code>, and <code class="code-cell">&lt;pines-table-cell&gt;</code> sub-components are composed manually. Use data-driven mode for displaying model collections; use child-content mode when table structure or cell content requires custom markup.</p>
 
 <h3 class="mt-8 mb-3">pines-table Properties (Data-Driven Mode)</h3>
 <pines-table>
@@ -20,25 +20,25 @@
         <pines-table-cell><code class="code-cell">table-id</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
         <pines-table-cell>N/A</pines-table-cell>
-        <pines-table-cell>Unique identifier for the table element.</pines-table-cell>
+        <pines-table-cell>Optional unique identifier applied to the rendered table element. Use when you need to reference the table from JavaScript or CSS, or when multiple tables are present on the same page.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">column-config</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">List&lt;(string Name, string DisplayName)&gt;</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">new List&lt;&gt;()</code></pines-table-cell>
-        <pines-table-cell>Column definitions.</pines-table-cell>
+        <pines-table-cell>Defines the columns to render in data-driven mode. Each entry maps a property name on the data objects to a human-readable column header. The order of entries determines column order.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">data</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">List&lt;object&gt;</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">new List&lt;&gt;()</code></pines-table-cell>
-        <pines-table-cell>Row data objects.</pines-table-cell>
+        <pines-table-cell>The collection of row data objects to render. Each object's properties are matched against column-config entries to populate cells. Used only in data-driven mode.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">display-action-col</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">false</code></pines-table-cell>
-        <pines-table-cell>Whether to show an action column.</pines-table-cell>
+        <pines-table-cell>When true, an additional "Actions" column is appended to the table. Use this when rows need inline action buttons — the column content is rendered via a slot or child fragment.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -55,7 +55,7 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
-        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+        <pines-table-cell>Additional CSS classes applied to the header row. Use to customize header appearance, such as background color or text weight, beyond the component's defaults.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -69,7 +69,7 @@
     <pines-table-row>
         <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
-        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+        <pines-table-cell>Additional CSS classes applied to the row element. Use for conditional row highlighting — for example, applying a warning background to rows that represent overdue items.</pines-table-cell>
     </pines-table-row>
 </pines-table>
 
@@ -85,12 +85,12 @@
         <pines-table-cell><code class="code-cell">class</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">string?</code></pines-table-cell>
         <pines-table-cell>N/A</pines-table-cell>
-        <pines-table-cell>Additional CSS classes.</pines-table-cell>
+        <pines-table-cell>Additional CSS classes applied to the cell element. Use to control text alignment, padding, or custom styling for individual cells.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">is-header</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">bool</code></pines-table-cell>
         <pines-table-cell>false</pines-table-cell>
-        <pines-table-cell>If true, renders as th instead of td.</pines-table-cell>
+        <pines-table-cell>When true, the cell is rendered as a th element instead of td. Use this within pines-table-header in child-content mode to mark cells as column headers.</pines-table-cell>
     </pines-table-row>
 </pines-table>

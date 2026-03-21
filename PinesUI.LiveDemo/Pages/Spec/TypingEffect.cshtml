@@ -6,7 +6,7 @@
 }
 
 <h2>Typing Effect</h2>
-<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-typing-effect&gt;</code> component creates a typewriter animation that cycles through an array of strings.</p>
+<p class="text-neutral-500 mb-5">The <code class="code-cell">&lt;pines-typing-effect&gt;</code> component creates a typewriter animation that cycles through an array of strings, typing each one character by character before erasing and moving to the next. Use it in hero sections or landing page headlines to dynamically communicate multiple value propositions — for example, cycling through "Fast", "Reliable", and "Scalable" after a static "We are" lead-in.</p>
 
 <h3 class="mt-8 mb-3">Properties</h3>
 <pines-table>
@@ -20,30 +20,30 @@
         <pines-table-cell><code class="code-cell">text-array</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">List&lt;string&gt;</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">new List&lt;&gt;()</code></pines-table-cell>
-        <pines-table-cell>Array of strings to cycle through.</pines-table-cell>
+        <pines-table-cell>The list of strings to cycle through. Each string is typed out in sequence, then erased before the next begins. Use short, punchy phrases that work well in a headline context.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">type-speed</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">110</code></pines-table-cell>
-        <pines-table-cell>Milliseconds between each character typed.</pines-table-cell>
+        <pines-table-cell>Milliseconds between each character being typed. Lower values produce faster typing; higher values produce a more deliberate, dramatic effect. Defaults to 110ms.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">cursor-speed</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">550</code></pines-table-cell>
-        <pines-table-cell>Cursor blink speed in milliseconds.</pines-table-cell>
+        <pines-table-cell>Controls how fast the cursor blinks in milliseconds. Adjust this independently of typing speed to fine-tune the visual rhythm of the animation. Defaults to 550ms.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">pause-end</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">1500</code></pines-table-cell>
-        <pines-table-cell>Pause duration after finishing a string (ms).</pines-table-cell>
+        <pines-table-cell>How long the completed string is displayed before erasing begins, in milliseconds. Increase this to give readers more time to absorb each phrase. Defaults to 1500ms.</pines-table-cell>
     </pines-table-row>
     <pines-table-row>
         <pines-table-cell><code class="code-cell">pause-start</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">int</code></pines-table-cell>
         <pines-table-cell><code class="code-cell">20</code></pines-table-cell>
-        <pines-table-cell>Pause duration before starting a new string (ms).</pines-table-cell>
+        <pines-table-cell>How long to wait after erasing before the next string begins typing, in milliseconds. Use a small value for a snappy transition or increase it for a more measured pace. Defaults to 20ms.</pines-table-cell>
     </pines-table-row>
 </pines-table>
