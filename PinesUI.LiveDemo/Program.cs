@@ -31,5 +31,5 @@ app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
 
-//app.GenerateStaticContent(@"C:\PinesUI Static");
+//app.GenerateStaticContent(@"C:\PinesUI Static", dontOptimizeContent: true, exitWhenDone: true);
 app.Run();

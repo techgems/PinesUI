@@ -9,10 +9,11 @@
 		<Version>1.0.0</Version>
 		<Authors>TechGems</Authors>
 		<Description>An ASP.NET Core component library built on Pines UI, using AlpineJS, TailwindCSS, and Static Components.</Description>
-		<PackageTags>aspnetcore;components;pinesui;alpinejs;tailwindcss;razor</PackageTags>
+		<PackageTags>aspnetcore;static-components;pinesui;alpinejs;tailwindcss;razor;hats-stack</PackageTags>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/techgems/static-components</RepositoryUrl>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
@@ -30,10 +31,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Remove="PinesUI.LiveDemo\**" />
-		<Content Remove="PinesUI.LiveDemo\**" />
-		<EmbeddedResource Remove="PinesUI.LiveDemo\**" />
-		<None Remove="PinesUI.LiveDemo\**" />
+	  <Compile Remove="PinesUI.LiveDemo\**" />
+	  <Content Remove="PinesUI.LiveDemo\**" />
+	  <EmbeddedResource Remove="PinesUI.LiveDemo\**" />
+	  <None Remove="PinesUI.LiveDemo\**" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -42,11 +43,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Update="wwwroot\input.css" Pack="false" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Folder Include="wwwroot\js\" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="README.md" Pack="true" PackagePath="\" />
+		<None Include="wwwroot\input.css" />
 	</ItemGroup>
 
 	<Target Name="TailwindBuild" AfterTargets="AfterBuild">

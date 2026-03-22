@@ -8,11 +8,6 @@ namespace TechGems.PinesUI.Views.Components.PinesCard;
 
 public class PinesImageCard : StaticComponent
 {
-    public PinesImageCard()
-    {
-        
-    }
-
     public const string CardContentSlot = "CardContent_Slot";
     
     public string ImageUrl { get; set; }
@@ -21,5 +16,4 @@ public class PinesImageCard : StaticComponent
     public string CardTitle { get; set; }
 
     public string Class { get; set; }
-
 }

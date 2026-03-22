@@ -10,15 +10,7 @@ dotnet add package TechGems.PinesUI --version 1.0.0
 
 ## Setup
 
-### 1. Register Static Components
-
-In your `Program.cs`:
-
-```csharp
-builder.Services.AddStaticComponents();
-```
-
-### 2. Add Tag Helpers
+### 1. Add Tag Helpers
 
 In your `_ViewImports.cshtml`:
 
@@ -27,7 +19,7 @@ In your `_ViewImports.cshtml`:
 @addTagHelper *, TechGems.StaticComponents
 ```
 
-### 3. Include Styles and Scripts
+### 2. Include Styles and Scripts
 
 In your layout file (`_Layout.cshtml`):
 
@@ -73,10 +65,10 @@ In your layout file (`_Layout.cshtml`):
 
 ## Tech Stack
 
+- [TechGems.StaticComponents](https://static-components.techgems.net/) - Server-side component model to implement the HATS stack.
 - [AlpineJS](https://alpinejs.dev/) - Lightweight JavaScript framework
 - [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS
 - [GSAP](https://greensock.com/gsap/) - Animation library
-- [TechGems.StaticComponents](https://github.com/nickkane999/TechGems.StaticComponents) - Server-side component model
 
 ## License
 
