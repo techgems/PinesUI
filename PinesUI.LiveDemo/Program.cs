@@ -1,4 +1,5 @@
 using AspNetStatic;
+using AspNetStatic.Optimizer;
 using AspNetStaticContrib.AspNetStatic;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<IStaticResourcesInfoProvider>(
    new StaticResourcesInfoProvider()
+     .Add(new CssResource("/_content/TechGems.PinesUI/css/lib.css"))
      .AddAllProjectRazorPages(builder.Environment)
      .AddAllWebRootContent(builder.Environment));
 
@@ -25,11 +27,15 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseAuthorization();
-
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
 
-//app.GenerateStaticContent(@"C:\PinesUI Static", dontOptimizeContent: true, exitWhenDone: true);
+var generateStaticFiles = Environment.GetEnvironmentVariable("GENERATE_STATIC_FILES");
+
+if (generateStaticFiles == "true")
+{
+    app.GenerateStaticContent(@"C:\PinesUI Static", dontOptimizeContent: true, exitWhenDone: true);
+}
+
 app.Run();

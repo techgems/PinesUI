@@ -8,5 +8,6 @@ namespace TechGems.PinesUI.Views.PinesSetup.PinesCss;
 
 public class PinesCss : StaticComponent
 {
-
+    [HtmlAttributeName("asp-append-version")]
+    public bool AppendVersion { get; set; } = true;
 }

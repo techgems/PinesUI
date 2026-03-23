@@ -17,7 +17,10 @@
 	<ItemGroup>
 		<PackageReference Include="AspNetStatic" Version="0.27.7" />
 		<PackageReference Include="AspNetStaticContrib" Version="1.2.1" />
-		<PackageReference Include="TechGems.PinesUI" Version="1.0.0-beta" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\TechGems.PinesUI.csproj" />
 	</ItemGroup>
 
 
