@@ -1,10 +1,8 @@
 @using TechGems.PinesUI.Views.Components.PinesBanner
+@using TechGems.StaticComponents
 @model PinesBanner
 
-<div x-data="{
-        bannerVisible: false,
-        bannerVisibleAfter: 300,
-     }"
+<div x-data="banner(@JavascriptConvert.SerializeObject(Model.BannerState))"
      x-show="bannerVisible"
      x-transition:enter="transition ease-out duration-500"
      x-transition:enter-start="-translate-y-10"
@@ -13,7 +11,7 @@
      x-transition:leave-start="translate-y-0"
      x-transition:leave-end="-translate-y-10"
      x-init="setTimeout(() => { bannerVisible = true }, bannerVisibleAfter);"
-    class="fixed top-0 left-0 w-full h-auto py-2 duration-300 ease-out bg-white shadow-sm sm:py-0 sm:h-10" x-cloak>
+    class="fixed top-0 left-0 w-full h-auto py-2 duration-300 ease-out bg-white shadow-sm sm:py-0 sm:h-10 z-50" x-cloak>
     <div class="flex items-center justify-between w-full h-full px-3 mx-auto max-w-7xl ">
         <a href="#" class="flex flex-col w-full h-full text-xs leading-6 text-black duration-150 ease-out sm:flex-row sm:items-center opacity-80 hover:opacity-100">
             <span class="flex items-center">
@@ -27,3 +25,9 @@
         </button>
     </div>
 </div>
+
+<script static-script type="text/javascript" teleport-script render-once="Model">
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('banner', (bannerObj) => (bannerObj));
+    })
+</script>

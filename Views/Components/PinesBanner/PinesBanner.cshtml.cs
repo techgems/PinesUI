@@ -14,4 +14,8 @@ public class PinesBanner : StaticComponent
 
     [HtmlAttributeName("body")]
     public string BannerBody { get; set; }
+
+
+    [HtmlAttributeName("initial-state")]
+    public PinesBannerState BannerState { get; set; } = new PinesBannerState();
 }
