@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
 		<PackageId>TechGems.PinesUI</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>TechGems</Authors>
 		<Description>An ASP.NET Core component library built on Pines UI, using AlpineJS, TailwindCSS, and Static Components.</Description>
 		<PackageTags>aspnetcore;static-components;pinesui;alpinejs;tailwindcss;razor;hats-stack</PackageTags>
@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="TechGems.StaticComponents" Version="1.1.1" />
+		<PackageReference Include="TechGems.StaticComponents" Version="1.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
