@@ -10,6 +10,9 @@ public class PinesSelect : StaticComponent
     [HtmlAttributeName("items")]
     public List<PinesSelectItem> Items { get; set; } = new List<PinesSelectItem>();
 
+    [HtmlAttributeName("value")]
+    public PinesSelectItem? Value { get; set; }
+
     [HtmlAttributeName("placeholder")]
     public string Placeholder { get; set; } = "Select Item";
 

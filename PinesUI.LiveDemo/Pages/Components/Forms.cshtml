@@ -49,6 +49,19 @@
     var datePickerCode = codeCreator.ToString();
     codeCreator.Clear();
 
+    //Multi Select code
+    codeCreator.AppendLine(@"  @{");
+    codeCreator.AppendLine(@"      var selectItems = new List<PinesMultiSelectItem>()");
+    codeCreator.AppendLine(@"      {");
+    codeCreator.AppendLine(@"          new PinesMultiSelectItem { Title = ""Apple"", Value = ""apple"" },");
+    codeCreator.AppendLine(@"          new PinesMultiSelectItem { Title = ""Banana"", Value = ""banana"" },");
+    codeCreator.AppendLine(@"          new PinesMultiSelectItem { Title = ""Cherry"", Value = ""cherry"" },");
+    codeCreator.AppendLine(@"          new PinesMultiSelectItem { Title = ""Grape"", Value = ""grape"", Disabled = true },");
+    codeCreator.AppendLine(@"      };");
+    codeCreator.AppendLine(@"  }");
+    codeCreator.AppendLine(@"");
+    codeCreator.AppendLine(@"  <pines-multi-select items=""multiSelectItems"" placeholder=""Choose multiple fruits""></pines-multi-select>");
+
 }
 
 <h2>Forms</h2>
@@ -59,7 +72,7 @@
 <pines-tabs tab-config="tabConfig">
     <slot name="Preview">
         <div class="flex flex-col gap-4 max-w-sm">
-            <pines-input show-label="true"></pines-input>
+            <pines-input></pines-input>
         </div>
     </slot>
     <slot name="Code">
@@ -81,7 +94,6 @@
     </slot>
 </pines-tabs>
 
-
 @{
     var selectItems = new List<TechGems.PinesUI.Views.Components.PinesSelect.PinesSelectItem>()
     {
@@ -97,7 +109,10 @@
 <pines-tabs tab-config="tabConfig">
     <slot name="Preview">
         <div class="max-w-sm">
-            <pines-select items="selectItems" placeholder="Choose a fruit"></pines-select>
+            <form method="post">
+                <pines-select items="selectItems" placeholder="Choose a fruit" value="selectItems[0]" asp-for="StringPropertyBind"></pines-select>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </slot>
     <slot name="Code">
@@ -118,3 +133,30 @@
         <code-highlight lang="html" code="@datePickerCode"></code-highlight>
     </slot>
 </pines-tabs>
+
+
+@{
+    var multiSelectItems = new List<TechGems.PinesUI.Views.Components.PinesSelect.PinesMultiSelectItem>()
+    {
+        new TechGems.PinesUI.Views.Components.PinesSelect.PinesMultiSelectItem { Title = "Apple", Value = "apple" },
+        new TechGems.PinesUI.Views.Components.PinesSelect.PinesMultiSelectItem { Title = "Banana", Value = "banana" },
+        new TechGems.PinesUI.Views.Components.PinesSelect.PinesMultiSelectItem { Title = "Cherry", Value = "cherry" },
+        new TechGems.PinesUI.Views.Components.PinesSelect.PinesMultiSelectItem { Title = "Grape", Value = "grape", Disabled = true },
+    };
+}
+
+<h2>Multi Select</h2>
+
+
+<pines-tabs tab-config="tabConfig">
+    <slot name="Preview">
+        <div class="flex flex-col gap-6">
+            <pines-multi-select items="multiSelectItems" placeholder="Choose multiple fruits"></pines-multi-select>
+        </div>
+    </slot>
+    <slot name="Code">
+        <code-highlight lang="html" code="@datePickerCode"></code-highlight>
+    </slot>
+</pines-tabs>
+
+

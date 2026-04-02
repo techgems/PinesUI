@@ -8,7 +8,7 @@
 
 <div x-data="{
         ratings: @Model.MaxStars,
-        rate: @Model.InitialValue,
+        rate: @Model.GetInitialOrPresetValue(),
         hoverRate: 0,
         disabled: @(JavascriptConvert.SerializeObject(Model.Disabled)),
         starsArray: Array.from({ length: @Model.MaxStars }, function(v, i) { return i + 1; }),

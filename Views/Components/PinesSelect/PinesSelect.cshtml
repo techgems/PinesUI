@@ -2,7 +2,12 @@
 @using TechGems.StaticComponents;
 @model PinesSelect
 
-<div x-data="pinesSelect(@(JavascriptConvert.SerializeObject(Model.Items, true)))"
+@{
+    var itemsJS = JavascriptConvert.SerializeObject(Model.Items, true);
+    var valueJS = Model.Value != null ? JavascriptConvert.SerializeObject(Model.Value, true) : null;
+}
+
+<div x-data="pinesSelect(@itemsJS, @valueJS)"
      x-init="
         $watch('selectOpen', function(){
             if(!selectedItem){
@@ -25,7 +30,7 @@
 
     @if (Model.InputExpression != null)
     {
-        <input type="hidden" asp-for="@Model.InputExpression" :value="selectedItem ? selectedItem.value : ''" />
+        <input type="hidden" name="@Model.InputExpression.Name" :value="selectedItem ? selectedItem.value : ''" />
     }
 
     <button x-ref="selectButton" @@click="selectOpen = !selectOpen"
@@ -68,10 +73,10 @@
 
 <script static-script type="text/javascript" render-once="Model" teleport-script>
     document.addEventListener('alpine:init', function() {
-        Alpine.data('pinesSelect', function(items) {
+        Alpine.data('pinesSelect', function(items, value) {
             return {
                 selectOpen: false,
-                selectedItem: '',
+                selectedItem: value || '',
                 selectableItems: items,
                 selectableItemActive: null,
                 selectId: this.$id('select'),
